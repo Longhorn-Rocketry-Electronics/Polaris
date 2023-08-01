@@ -1,8 +1,12 @@
+#include "driver/adc.h"
+
 #define BUZZER_PIN 3
 #define MAIN_CTRL 4
 #define DROGUE_CTRL 5
 #define MAIN_DETECT 6
 #define DROGUE_DETECT 7
+#define MAIN_DETECT_ADC_CHANNEL ADC1_CHANNEL_5
+#define DROGUE_DETECT_ADC_CHANNEL ADC1_CHANNEL_6
 
 #define SENSOR_CLK 45
 #define SENSOR_MISO 13

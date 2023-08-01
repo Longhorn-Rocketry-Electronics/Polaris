@@ -16,7 +16,7 @@ void BMI088::initialize(void) {
     setAccPowerMode(ACC_ACTIVE);
 
     setGyroScaleRange(RANGE_2000);
-    setGyroOutputDataRate(ODR_2000_BW_532);
+    setGyroOutputDataRate(ODR_400_BW_47);
     setGyroPowerMode(GYRO_NORMAL);
 }
 

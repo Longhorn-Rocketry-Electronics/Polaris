@@ -6,10 +6,15 @@
 #include "bmi088.h"
 #include "util.h"
 #include "SD.h"
+#include <driver/adc.h>
+#include "Math3D.h"
 
 SPIClass sensor_spi = SPIClass(SPI2_HOST);
 BMI088 bmi088 = BMI088(&sensor_spi);
 
+int64_t last_continuity_check_micros = 0;
+int64_t last_motion_update_micros = 0;
+int64_t last_print_micros = 0;
 
 void setup() {
   Serial.begin(115200);
@@ -30,11 +35,6 @@ void setup() {
 
   digitalWrite(DROGUE_CTRL, LOW); // DO NOT ACCIDENTALLY FIRE
   pinMode(DROGUE_CTRL, OUTPUT);
-
-  pinMode(MAIN_DETECT, INPUT);
-  pinMode(DROGUE_DETECT, INPUT);
-  adcAttachPin(MAIN_DETECT);
-  adcAttachPin(DROGUE_DETECT);
 
   pinMode(V5_ENABLE, OUTPUT);
   pinMode(V5_BOOST, OUTPUT);
@@ -126,48 +126,125 @@ void setup() {
 
   beep(1000);
 
+  
+
 }
 
 
 bool output = false;
 byte num = 0;
+Quat AttitudeEstimateQuat;
+
+Vec3 correction_Body, correction_World;
+Vec3 Accel_Body, Accel_World;
+Vec3 GyroVec;
+const Vec3 VERTICAL = Vector(0.0f, 0.0f, 1.0f);  // vertical vector in the World frame
+
+
+
+
 void loop() {
   // put your main code here, to run repeatedly:
-  digitalWrite(42, output);
-  digitalWrite(43, !output);
-  digitalWrite(44, output);
+  updateAsyncBeep();
 
-  // digitalWrite(MAIN_CTRL, output);
-  // digitalWrite(DROGUE_CTRL, !output);
+
+  // digitalWrite(42, output);
+  // digitalWrite(43, !output);
+  // digitalWrite(44, output);
   
-  delay(500);
-  output = !output;
+  // output = !output;
 
   // Serial.println("Hello World");
 
-  if (num == 8) {
-    uint32_t main_detect = analogRead(MAIN_DETECT) * 3300 / 4096;
-    uint32_t drogue_detect = analogRead(DROGUE_DETECT) * 3300 / 4096;
+  if (esp_timer_get_time() - last_continuity_check_micros >= 5000 * 1000) { // Check continuity every 5 seconds
+    uint32_t main_detect, drogue_detect;
+
+    main_detect = analogReadMilliVolts(A5);
+    drogue_detect = analogReadMilliVolts(A6);
 
     if (main_detect < 500) {
-      beep(25);
-      delay(25);
+      queue_beep(esp_timer_get_time(), 25 * 1000); // 25ms
     }
 
     if (drogue_detect < 500) {
-      beep(25);
-      delay(25);
-      beep(25);
-      delay(25);
+      queue_beep(esp_timer_get_time() + 100 * 1000, 25 * 1000); // 25ms
+      queue_beep(esp_timer_get_time() + 200 * 1000, 25 * 1000); // 25ms
+    }
+  }
+
+  if (esp_timer_get_time() - last_motion_update_micros >= 2500) { // 400Hz
+    if (last_motion_update_micros == 0) {
+      last_motion_update_micros = esp_timer_get_time();
     }
 
-    Serial.println("DETECTS");
-    Serial.println(main_detect);
-    Serial.println(drogue_detect);
+    float ax, ay, az, gx, gy, gz;
+    bmi088.getAcceleration(&ax, &ay, &az);
+    int64_t time_of_read = esp_timer_get_time();
+    bmi088.getGyroscope(&gx, &gy, &gz);
 
-    num = 0;
-  } else {
-    num++;
+    AttitudeEstimateQuat.x += gx * (time_of_read - last_motion_update_micros) / 1000000.0f;
+    AttitudeEstimateQuat.y += gy * (time_of_read - last_motion_update_micros) / 1000000.0f;
+    AttitudeEstimateQuat.z += gz * (time_of_read - last_motion_update_micros) / 1000000.0f;
+
+    // // convert gyro to rad/s from deg/s
+    // gx = gx * PI / 180.0;
+    // gy = gy * PI / 180.0;
+    // gz = gz * PI / 180.0;
+
+    // // convert accel to g from mg
+    // ax = ax / 1000.0;
+    // ay = ay / 1000.0;
+    // az = az / 1000.0;
+
+    // GyroVec = Vector(gx, gy, gz);
+    // Accel_Body = Vector(ax, ay, az);
+
+    // Accel_World = Rotate(AttitudeEstimateQuat, Accel_Body); // rotate accel from body frame to world frame
+
+		// correction_World = CrossProd(Accel_World, VERTICAL); // cross product to determine error
+
+		// Vec3 correction_Body = Rotate(correction_World, AttitudeEstimateQuat); // rotate correction vector to body frame
+
+		// GyroVec = Sum(GyroVec, correction_Body);  // add correction vector to gyro data
+
+		// Quat incrementalRotation = Quaternion(GyroVec, time_of_read - last_motion_update_micros); // quaternion integration (rotation from gyro data)    
+
+		// AttitudeEstimateQuat = Mul(incrementalRotation, AttitudeEstimateQuat);  // quaternion integration (rotation composting through multiplication)
+
+    Serial.print(time_of_read);
+    Serial.print(",");
+    Serial.print(ax);
+    Serial.print(",");
+    Serial.print(ay);
+    Serial.print(",");
+    Serial.print(az);
+    Serial.print(",");
+    Serial.print(gx);
+    Serial.print(",");
+    Serial.print(gy);
+    Serial.print(",");
+    Serial.print(gz);
+    Serial.print(",");
+    
+    Serial.print(AttitudeEstimateQuat.x);
+    Serial.print(",");
+    Serial.print(AttitudeEstimateQuat.y);
+    Serial.print(",");
+    Serial.print(AttitudeEstimateQuat.z);
+
+    Serial.print("\n"); // ends CSV line
+
+    if (time_of_read - last_print_micros >= 100 * 1000) {
+
+      // Serial.print(",");
+      // Serial.println(AttitudeEstimateQuat.w);
+
+
+      last_print_micros = time_of_read;
+    }
+
+    last_motion_update_micros = time_of_read;    
+
   }
 
   // int32_t temp;
@@ -183,26 +260,11 @@ void loop() {
   // Serial.println(temp);
   // Serial.println(pres);
 
-  // float ax, ay, az;
 
-  // bmi088.getAcceleration(&ax, &ay, &az);
 
-  // float gx, gy, gz;
-
-  // bmi088.getGyroscope(&gx, &gy, &gz);
-
-  // Serial.print(ax);
-  // Serial.print(",");
-  // Serial.print(ay);
-  // Serial.print(",");
-  // Serial.print(az);
-  // Serial.print(",");
-  // Serial.print(gx);
-  // Serial.print(",");
-  // Serial.print(gy);
-  // Serial.print(",");
-  // Serial.println(gz);
 
   // delay(15);
+
+
 
 }

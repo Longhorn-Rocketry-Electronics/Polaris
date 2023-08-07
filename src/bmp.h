@@ -2,4 +2,5 @@
 
 void BMPStartMeasurement();
 void bmp_init(SPIClass* spi_to_use);
-void getBMPData(int32_t *temperature, uint32_t *pressure);
+void getBMPData(float *temperature, float *pressure);
+float altitude_from_pressure(uint32_t pressure);

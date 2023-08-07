@@ -77,9 +77,7 @@ void deselectBMP() {
 
 
 void bmp_init(SPIClass* spi_to_use) {
-    bmp_spi = spi_to_use;
-    
-    pinMode(BMP_CS, OUTPUT);
+    bmp_spi = spi_to_use;    
 
     selectBMP();
 
@@ -107,8 +105,6 @@ void bmp_init(SPIClass* spi_to_use) {
     dig_P7 = *(int16_t *)(calib_data + 18);
     dig_P8 = *(int16_t *)(calib_data + 20);
     dig_P9 = *(int16_t *)(calib_data + 22);
-
-    deselectBMP();
 
     // Serial.println("Temperature calibration parameters: ");
     // Serial.println(dig_T1);
@@ -173,25 +169,57 @@ void BMPStartMeasurement() {
   deselectBMP();
 }
 
-void getBMPData(int32_t *temperature, uint32_t *pressure) {
+void getBMPData(float *temperature, float *pressure) {
     selectBMP();
 
     // Send the register address of pressure MSB (0xF7) with read bit (0x80) set
     bmp_spi->transfer(0xF7 | 0x80);
 
     // Receive 6 bytes of data for pressure and temperature
-    uint8_t press_msb = bmp_spi->transfer(0);
-    uint8_t press_lsb = bmp_spi->transfer(0);
-    uint8_t press_xlsb = bmp_spi->transfer(0);
-    uint8_t temp_msb = bmp_spi->transfer(0);
-    uint8_t temp_lsb = bmp_spi->transfer(0);
-    uint8_t temp_xlsb = bmp_spi->transfer(0);
+    uint32_t press_msb = (uint32_t)bmp_spi->transfer(0);
+    uint32_t press_lsb = (uint32_t)bmp_spi->transfer(0);
+    uint32_t press_xlsb = (uint32_t)bmp_spi->transfer(0);
+    uint32_t temp_msb = (uint32_t)bmp_spi->transfer(0);
+    uint32_t temp_lsb = (uint32_t)bmp_spi->transfer(0);
+    uint32_t temp_xlsb = (uint32_t)bmp_spi->transfer(0);
 
     // Pull CS high to end communication
     deselectBMP();
 
-    *temperature = bmp280_compensate_T_int32((temp_msb << 12) | (temp_lsb << 4) | (temp_xlsb >> 4));
-    *pressure = bmp280_compensate_P_int32((press_msb << 12) | (press_lsb << 4) | (press_xlsb >> 4));
+    // Serial.println("Pressure MSB: ");
+    // Serial.println(press_msb);
+    // Serial.println("Pressure LSB: ");
+    // Serial.println(press_lsb);
+    // Serial.println("Pressure XLSB: ");
+    // Serial.println(press_xlsb);
+    // Serial.println("Temperature MSB: ");
+    // Serial.println(temp_msb);
+    // Serial.println("Temperature LSB: ");
+    // Serial.println(temp_lsb);
+    // Serial.println("Temperature XLSB: ");
+    // Serial.println(temp_xlsb);
+
+    *temperature = (float)(bmp280_compensate_T_int32((temp_msb << 12) | (temp_lsb << 4) | (temp_xlsb >> 4))) / 100.0f;
+    *pressure = (float)(bmp280_compensate_P_int32((press_msb << 12) | (press_lsb << 4) | (press_xlsb >> 4)));
+
+    // Serial.println("Temperature: ");
+    // Serial.println(bmp280_compensate_P_int32((press_msb << 12) | (press_lsb << 4) | (press_xlsb >> 4)));
+    // Serial.println("Pressure: ");
+    // Serial.println(bmp280_compensate_T_int32((temp_msb << 12) | (temp_lsb << 4) | (temp_xlsb >> 4)));
 
     return;
+}
+
+int32_t sea_level_pressure = 101325; // Pascals
+
+// Takes in pressure (raw, Pascals) and returns altitude (fixed point 100)
+float altitude_from_pressure(uint32_t pressure)
+{
+  float p = (float)pressure;
+
+  // Calculate altitude using the barometric formula
+  float h = 44330 * (1 - powf(p / sea_level_pressure, 1 / 5.25579));
+
+  // Convert altitude to fixed point and return
+  return (h * 100);
 }

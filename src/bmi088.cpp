@@ -12,11 +12,11 @@ BMI088::BMI088(SPIClass* spi_to_use) {
 
 void BMI088::initialize(void) {
     setAccScaleRange(RANGE_24G);
-    setAccOutputDataRate(ODR_100);
+    setAccOutputDataRate(ODR_200);
     setAccPowerMode(ACC_ACTIVE);
 
     setGyroScaleRange(RANGE_2000);
-    setGyroOutputDataRate(ODR_400_BW_47);
+    setGyroOutputDataRate(ODR_200_BW_23);
     setGyroPowerMode(GYRO_NORMAL);
 }
 
@@ -116,6 +116,11 @@ void BMI088::getAcceleration(float* x, float* y, float* z) {
     ax = buf[0] | (buf[1] << 8);
     ay = buf[2] | (buf[3] << 8);
     az = buf[4] | (buf[5] << 8);
+
+    // Serial.println("getAcceleration: buf");
+    // for (int i = 0; i < 6; i++) {
+    //     Serial.println(buf[i]);
+    // }
 
     value = (int16_t)ax;
     *x = accRange * value / 32768;
@@ -234,13 +239,7 @@ int16_t BMI088::getTemperature(void) {
 }
 
 void BMI088::selectDevice(bmi_device_type_t device) {
-    if (device == ACC) {
-        digitalWrite(ACC_CS, LOW);
-        digitalWrite(GYRO_CS, HIGH);
-    } else {
-        digitalWrite(ACC_CS, HIGH);
-        digitalWrite(GYRO_CS, LOW);
-    }
+    digitalWrite(device, LOW);
 }
 
 void BMI088::deselectDevice(bmi_device_type_t device) {

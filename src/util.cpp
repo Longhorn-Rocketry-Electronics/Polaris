@@ -18,6 +18,7 @@ void queue_beep(int64_t beep_start_micros, int64_t beep_duration_micros) {
 
   beep_queue_start[beep_queue_length] = beep_start_micros;
   beep_queue_end[beep_queue_length] = beep_start_micros + beep_duration_micros;
+  beep_queue_length++;
 }
 
 void updateAsyncBeep() {

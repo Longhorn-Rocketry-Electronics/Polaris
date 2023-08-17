@@ -212,7 +212,7 @@ void getBMPData(float *temperature, float *pressure) {
 
 int32_t sea_level_pressure = 101325; // Pascals
 
-// Takes in pressure (raw, Pascals) and returns altitude (fixed point 100)
+// Takes in pressure (raw, Pascals) and returns altitude
 float altitude_from_pressure(uint32_t pressure)
 {
   float p = (float)pressure;
@@ -220,6 +220,5 @@ float altitude_from_pressure(uint32_t pressure)
   // Calculate altitude using the barometric formula
   float h = 44330 * (1 - powf(p / sea_level_pressure, 1 / 5.25579));
 
-  // Convert altitude to fixed point and return
-  return (h * 100);
+  return h;
 }

@@ -239,7 +239,11 @@ int16_t BMI088::getTemperature(void) {
 }
 
 void BMI088::selectDevice(bmi_device_type_t device) {
+    digitalWrite(ACC_CS, HIGH);
+    digitalWrite(GYRO_CS, HIGH);
+    delayMicroseconds(2);
     digitalWrite(device, LOW);
+    delayMicroseconds(2);
 }
 
 void BMI088::deselectDevice(bmi_device_type_t device) {

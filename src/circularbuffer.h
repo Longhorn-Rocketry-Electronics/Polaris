@@ -5,6 +5,7 @@ public:
     void push(T item);
     T pop();
     T get(int index); // 0 is the most recent item
+    T getRaw(int index);
     bool full() { return num_items == SIZE; }
     int length() { return num_items; }
 private:
@@ -46,7 +47,10 @@ template <class T, int SIZE> T CircularBuffer<T, SIZE>::pop() { // FIFO
     // Serial.print("POP: ");
     // Serial.print(i);
     // Serial.print(", ");
-    // Serial.println(next_index);
+    // Serial.print(next_index);
+    // Serial.print(" is: '");
+    // Serial.print(buffer[i]);
+    // Serial.println("'");
 
     return buffer[i];
 }
@@ -66,4 +70,8 @@ template <class T, int SIZE> T CircularBuffer<T, SIZE>::get(int index) {
 
 
     return buffer[i];
+}
+
+template <class T, int SIZE> T CircularBuffer<T, SIZE>::getRaw(int index) {
+    return buffer[index];
 }

@@ -184,10 +184,10 @@ void setup() {
             drogue_altitude_meters = line.substring(23).toFloat();
           }
           if (line.startsWith("main_on_apogee")) {
-            main_on_apogee = line.substring(15).toInt();
+            main_on_apogee = line.substring(15)[0] == 't' || line.substring(15)[0] == 'T' || line.substring(15)[0] == '1';
           }
           if (line.startsWith("drogue_on_apogee")) {
-            drogue_on_apogee = line.substring(17).toInt();
+            drogue_on_apogee = line.substring(17)[0] == 't' || line.substring(17)[0] == 'T' || line.substring(17)[0] == '1';
           }
         } catch (const std::exception& e) {
           Serial.println("Error parsing config file!");
@@ -199,6 +199,8 @@ void setup() {
           beep(50);
           delay(100);
         }
+
+        // Serial.println("Drogue on apogee: " + String(drogue_on_apogee));
       }
       f.close();
       beep(500);
@@ -252,19 +254,64 @@ bool output = false;
 byte num = 0;
 float ax, ay, az, gx, gy, gz, pressure, temperature, altitude;
 CircularBuffer<float, 100> recent_altitudes;
-CircularBuffer<String, 2000> log_lines;
 uint32_t main_detect, drogue_detect;
+
+CircularBuffer<float, 1000> ax_buf, ay_buf, az_buf, gx_buf, gy_buf, gz_buf, yaw_buf, pitch_buf, roll_buf, pressure_buf, temperature_buf, altitude_buf;
+CircularBuffer<uint64_t, 1000> time_buf;
+CircularBuffer<uint32_t, 1000> main_detect_buf, drogue_detect_buf;
+CircularBuffer<FlightStage, 1000> stage_buf;
 
 FlightStage stage = NOT_LAUNCHED;
 
 int64_t main_fired_micros = 0;
 int64_t drogue_fired_micros = 0;
 
+bool logLineAvailable() {
+  return time_buf.length() > 0;
+}
+
+String popOldestLogLine() {
+  if (!logLineAvailable()) {
+    return "";
+  }
+  String toRet = String(time_buf.pop()) + 
+    "," + String(pressure_buf.pop()) +
+    "," + String(temperature_buf.pop()) +
+    "," + String(altitude_buf.pop()) +
+    "," + String(yaw_buf.pop()) +
+    "," + String(pitch_buf.pop()) +
+    "," + String(roll_buf.pop()) +
+    "," + String(ax_buf.pop()) +
+    "," + String(ay_buf.pop()) +
+    "," + String(az_buf.pop()) +
+    "," + String(gx_buf.pop()) +
+    "," + String(gy_buf.pop()) +
+    "," + String(gz_buf.pop()) +
+    "," + String(drogue_detect_buf.pop()) +
+    "," + String(main_detect_buf.pop()) +
+    "," + String(stage_buf.pop()) +
+    "," + String(main_fired_micros) +
+    "," + String(drogue_fired_micros) +
+    "\n";
+
+  // if (Serial.availableForWrite()) {
+  //   Serial.print("POPPED, LOGGING: " + toRet);
+  // }
+  
+  return toRet;
+}
+
+
+
+
 void loop() {
   // put your main code here, to run repeatedly:
   updateAsyncBeep();
 
 
+  // if (stage == POST_APOGEE) {
+  //   Serial.println("STARTING LOOP IN POST APOGEE STATE");
+  // }
   // Serial.println("Hello World");
 
   if (esp_timer_get_time() - last_continuity_check_micros >= 5000 * 1000) { // Check continuity every 5 seconds
@@ -315,7 +362,6 @@ void loop() {
 
     if (altitude > 0.01 || altitude < -0.01) { // filter out bad readings of 0
 
-
       if (stage == NOT_LAUNCHED && recent_altitudes.length() > 10) {
         float temp = recent_altitudes.get(0);
         if (altitude < temp - 0.25f) { // protects against bursts of wind increasing pressure
@@ -357,62 +403,89 @@ void loop() {
 
     last_motion_update_micros = time_of_read;
 
-    String s = String(time_of_read) + 
-      "," + String(pressure) +
-      "," + String(temperature) +
-      "," + String(altitude) +
-      "," + String(ori.getYaw()) +
-      "," + String(ori.getPitch()) +
-      "," + String(ori.getRoll()) +
-      "," + String(ax) +
-      "," + String(ay) +
-      "," + String(az) +
-      "," + String(gx) +
-      "," + String(gy) +
-      "," + String(gz) +
-      "," + String(drogue_detect) +
-      "," + String(main_detect) +
-      "," + String(stage) +
-      "," + String(main_fired_micros) +
-      "," + String(drogue_fired_micros) +
-      "\n";
+    // String s = String(time_of_read) + 
+    //   "," + String(pressure) +
+    //   "," + String(temperature) +
+    //   "," + String(altitude) +
+    //   "," + String(ori.getYaw()) +
+    //   "," + String(ori.getPitch()) +
+    //   "," + String(ori.getRoll()) +
+    //   "," + String(ax) +
+    //   "," + String(ay) +
+    //   "," + String(az) +
+    //   "," + String(gx) +
+    //   "," + String(gy) +
+    //   "," + String(gz) +
+    //   "," + String(drogue_detect) +
+    //   "," + String(main_detect) +
+    //   "," + String(stage) +
+    //   "," + String(main_fired_micros) +
+    //   "," + String(drogue_fired_micros) +
+    //   "\n";
 
-    log_lines.push(s);
+    time_buf.push(time_of_read);
+    pressure_buf.push(pressure);
+    temperature_buf.push(temperature);
+    altitude_buf.push(altitude);
+    yaw_buf.push(ori.getYaw());
+    pitch_buf.push(ori.getPitch());
+    roll_buf.push(ori.getRoll());
+    ax_buf.push(ax);
+    ay_buf.push(ay);
+    az_buf.push(az);
+    gx_buf.push(gx);
+    gy_buf.push(gy);
+    gz_buf.push(gz);
+    drogue_detect_buf.push(drogue_detect);
+    main_detect_buf.push(main_detect);
+    stage_buf.push(stage);
 
-    static int lognum = 0; // log at much reduced frequency pre-launch
+
+    static int lognum = 100; // log at much reduced frequency pre-launch
     if (log_file != NULL) {
       if (stage == NOT_LAUNCHED || stage == LANDED) {
-        if (lognum == 100) { // 1Hz
+        if (lognum >= 100) { // 1Hz
           output = !output;
-          log_file->print(log_lines.pop());
+          log_file->print(popOldestLogLine());
           log_file->flush();          
           lognum = 0;
+          // Serial.println("POPPED, LOGGING w/ " + String(esp_get_free_heap_size()) + " bytes free");
+          // Serial.flush();
         }
+        lognum++;
       } else if (stage == LAUNCHED || stage == POST_APOGEE)
       {        // 100Hz
         int counter = 3;
-        while (counter > 0 && log_lines.length() > 0) { // write up to 3 lines per loop
-          log_file->print(log_lines.pop());
+        while (counter > 0 && logLineAvailable()) {
+          log_file->print(popOldestLogLine());
           counter--;
           last_motion_update_micros += 100; // pretend we wrote 100us worth of data
         }
         log_file->flush();
       }
-      lognum++;
+
     }
 
     if (Serial.availableForWrite()) {
-      if (num == 8)
+      if (num % 10 == 0 || stage == LAUNCHED || stage == POST_APOGEE)
       {
-        Serial.print(String(log_lines.length()) + ", " + s);
+        Serial.println(
+          String(time_of_read) + 
+          "," + String(altitude) +
+          "," + String(drogue_fired_micros) + 
+          "," + String(stage) +
+          ", " + time_buf.length() +
+          ", " + String(lognum)
+        );
         Serial.flush();
+      }
+      if (num == 100) {
         num = 0;
+        if (log_file == NULL) {
+          Serial.println("LOG FILE IS NULL");
+        }
       }
-      else
-      {
-        num++;
-      }
-
+      num++;
     }
 
   }    
@@ -430,28 +503,33 @@ void loop() {
         if (newest_alt > recent_alt && // This avoids a one or two element spike
             (recent_alt > oldest_alt + launch_detection_threshold ) &&
             
-            ((abs(ax) > launch_detection_min_g*1000 || abs(ay) > launch_detection_min_g*1000 || abs(az) > launch_detection_min_g*1000) || (ax == 0 && ay == 0 && az == 0))
+            ((abs(ax) >= launch_detection_min_g*1000 || abs(ay) >= launch_detection_min_g*1000 || abs(az) >= launch_detection_min_g*1000) || (ax == 0 && ay == 0 && az == 0))
             
              )
         {
-          Serial.println("NEWEST, RECENT, MID, OLDEST");
-          Serial.println(newest_alt);
-          Serial.println(recent_alt);
-          Serial.println(mid_alt);
-          Serial.println(oldest_alt);
+          if (Serial.availableForWrite()) {
+            Serial.println("NEWEST, RECENT, MID, OLDEST");
+            Serial.println(newest_alt);
+            Serial.println(recent_alt);
+            Serial.println(mid_alt);
+            Serial.println(oldest_alt);
+          }
           stage = LAUNCHED;
           launch_time_micros = esp_timer_get_time();
-        }
+        }        
+        break;
       }
-      break;
       case LAUNCHED:
       {
         if (newest_alt < mid_alt && mid_alt < oldest_alt)
         {
           stage = POST_APOGEE;
+          if (Serial.availableForWrite()) {
+            Serial.println("POST_APOGEE -----------------------");
+          }
         }
+        break;
       }
-      break;
       case POST_APOGEE:
       {
         float maxDifference = 0;
@@ -466,8 +544,11 @@ void loop() {
         if (maxDifference < 3)
         {
           stage = LANDED;
-          while (log_lines.length() > 0) {
-            log_file->print(log_lines.pop());
+          if (Serial.availableForWrite()) {
+            Serial.println("LANDED ----------------------- " + String(maxDifference));
+          }
+          while (logLineAvailable()) {
+            log_file->print(popOldestLogLine());
             log_file->flush();
           }
         }
@@ -504,6 +585,8 @@ void loop() {
       if (drogue_on_apogee && stage == POST_APOGEE) {
         digitalWrite(DROGUE_CTRL, HIGH);
         drogue_fired_micros = current_time;
+      } else {
+        // Serial.println("Not firing drogue because: " + String(drogue_on_apogee) + ", " + String(stage));
       }
       if (altitude < drogue_altitude_meters && drogue_altitude_meters > 0 && stage == POST_APOGEE) {
         digitalWrite(DROGUE_CTRL, HIGH);
@@ -519,4 +602,8 @@ void loop() {
   if (drogue_fired_micros > 0 && esp_timer_get_time() - drogue_fired_micros >= 1000 * drogue_fire_duration_ms) {
     digitalWrite(DROGUE_CTRL, LOW);
   }
+
+  // if (stage == POST_APOGEE) {
+  //   Serial.println("ENDING LOOP IN POST APOGEE STATE");
+  // }
 }

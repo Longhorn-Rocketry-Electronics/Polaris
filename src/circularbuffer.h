@@ -6,6 +6,7 @@ public:
     T pop();
     T get(int index); // 0 is the most recent item
     T getRaw(int index);
+    void setRaw(int index, T item) { buffer[index] = item; }
     bool full() { return num_items == SIZE; }
     int length() { return num_items; }
 private:
@@ -34,7 +35,7 @@ template <class T, int SIZE> void CircularBuffer<T, SIZE>::push(T item) {
     }
 }
 
-// Returns the oldest item
+// Returns the oldest item and removes it from the buffer
 template <class T, int SIZE> T CircularBuffer<T, SIZE>::pop() { // FIFO
     if (num_items == 0) {
         return T();

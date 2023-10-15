@@ -252,7 +252,10 @@ Madgwick ori;
 
 bool output = false;
 byte num = 0;
-float ax, ay, az, gx, gy, gz, pressure, temperature, altitude;
+float ax, ay, az, gx, gy, gz, pressure, temperature;
+// relative to sea level before launch, relative to launch ground altitude after launch (meters)
+float altitude = 0;
+float launch_ground_altitude = 0;
 CircularBuffer<float, 100> recent_altitudes;
 uint32_t main_detect, drogue_detect;
 
@@ -274,10 +277,13 @@ String popOldestLogLine() {
   if (!logLineAvailable()) {
     return "";
   }
+
+  float alt_val = altitude_buf.pop();
+
   String toRet = String(time_buf.pop()) + 
     "," + String(pressure_buf.pop()) +
     "," + String(temperature_buf.pop()) +
-    "," + String(altitude_buf.pop()) +
+    "," + String(stage == NOT_LAUNCHED ? 0 : alt_val) + // if we are not launched, altitude is 0
     "," + String(yaw_buf.pop()) +
     "," + String(pitch_buf.pop()) +
     "," + String(roll_buf.pop()) +
@@ -358,17 +364,17 @@ void loop() {
     }
 
     getBMPData(&temperature, &pressure);
-    altitude = altitude_from_pressure(pressure);
+    altitude = altitude_from_pressure(pressure) - launch_ground_altitude;
 
     if (altitude > 0.01 || altitude < -0.01) { // filter out bad readings of 0
 
       if (stage == NOT_LAUNCHED && recent_altitudes.length() > 10) {
-        float temp = recent_altitudes.get(0);
-        if (altitude < temp - 0.25f) { // protects against bursts of wind increasing pressure
-          altitude = temp - 0.25f;
+        float prev_alt = recent_altitudes.get(0);
+        if (altitude < prev_alt - 0.25f) { // protects against bursts of wind increasing pressure, thus decreasing altitude
+          altitude = prev_alt - 0.25f;
         }
-        if (altitude > temp + 80.0f) { // most likely an incorrect measurement (80 meters higher in 0.1seconds)
-          altitude = temp + 10.0f; //unlikely you will be going over 100 m/s in < 0.4s, so this should be good
+        if (altitude > prev_alt + 80.0f) { // most likely an incorrect measurement (80 meters higher in 0.1seconds)
+          altitude = prev_alt + 10.0f; // unlikely you will be going over 100 m/s in < 0.4s, so this should be good
         }
       }
 
@@ -515,7 +521,28 @@ void loop() {
             Serial.println(oldest_alt);
           }
           stage = LAUNCHED;
-          launch_time_micros = esp_timer_get_time();
+
+          launch_ground_altitude = oldest_alt;       
+
+          // find the most recent altitude that is within 3 meters of the launch ground altitude to use as the launch time
+          int launch_time_index = altitude_buf.length() - 1;
+
+          while (launch_time_index > 0 && abs(altitude_buf.get(launch_time_index) - launch_ground_altitude) > 3) {
+            launch_time_index--;
+          }
+
+          launch_time_micros = time_buf.get(launch_time_index);
+
+          // shift all the previous altitudes down by the launch ground altitude, since all future measurements will be relative to the launch ground altitude
+          for (int i = 0; i < altitude_buf.length(); i++) {
+            altitude_buf.setRaw(i, altitude_buf.getRaw(i) - launch_ground_altitude);
+          }
+          for (int i = 0; i < recent_altitudes.length(); i++) {
+            recent_altitudes.setRaw(i, recent_altitudes.getRaw(i) - launch_ground_altitude);
+          }
+
+          altitude = altitude - launch_ground_altitude;
+
         }        
         break;
       }

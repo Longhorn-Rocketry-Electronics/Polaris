@@ -4,7 +4,6 @@
 #include "util.h"
 
 
-
 #define BMP_MODE 0b11
 #define BMP_OSRS_P 0b101
 #define BMP_OSRS_T 0b010

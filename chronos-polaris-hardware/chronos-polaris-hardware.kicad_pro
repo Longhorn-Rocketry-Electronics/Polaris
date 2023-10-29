@@ -463,7 +463,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "chronos-polaris-hardware.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

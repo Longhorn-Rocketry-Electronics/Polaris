@@ -257,11 +257,11 @@ float ax, ay, az, gx, gy, gz, pressure, temperature;
 float altitude = 0;
 float launch_ground_altitude = 0;
 CircularBuffer<float, 100> recent_altitudes;
-uint32_t main_detect, drogue_detect;
+uint16_t main_detect, drogue_detect;
 
 CircularBuffer<float, 1000> ax_buf, ay_buf, az_buf, gx_buf, gy_buf, gz_buf, yaw_buf, pitch_buf, roll_buf, pressure_buf, temperature_buf, altitude_buf;
 CircularBuffer<uint64_t, 1000> time_buf;
-CircularBuffer<uint32_t, 1000> main_detect_buf, drogue_detect_buf;
+CircularBuffer<uint16_t, 1000> main_detect_buf, drogue_detect_buf;
 CircularBuffer<FlightStage, 1000> stage_buf;
 
 FlightStage stage = NOT_LAUNCHED;
@@ -322,8 +322,8 @@ void loop() {
 
   if (esp_timer_get_time() - last_continuity_check_micros >= 5000 * 1000) { // Check continuity every 5 seconds
 
-    main_detect = analogReadMilliVolts(A5);
-    drogue_detect = analogReadMilliVolts(A6);
+    main_detect = (uint16_t)analogReadMilliVolts(A5);
+    drogue_detect = (uint16_t)analogReadMilliVolts(A6);
 
     if (stage == NOT_LAUNCHED) {
       if (main_detect < 500) {

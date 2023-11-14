@@ -587,8 +587,18 @@ void loop() {
   }
 
 
+
   if (stage >= LAUNCHED && stage < LANDED) {
     int64_t current_time = esp_timer_get_time();
+
+    float latest_twenty_altitudes[20];
+
+    for (int i = 0; i < 20; i++) {
+      latest_twenty_altitudes[i] = recent_altitudes.get(i);
+    }
+
+    float median_altitude = median(latest_twenty_altitudes, 20);
+
     if (main_fired_micros == 0) {
       if (current_time - launch_time_micros >= main_timer_ms * 1000 && main_timer_ms > 0) {
         digitalWrite(MAIN_CTRL, HIGH);
@@ -598,7 +608,7 @@ void loop() {
         digitalWrite(MAIN_CTRL, HIGH);
         main_fired_micros = current_time;
       }
-      if (altitude < main_altitude_meters && main_altitude_meters > 0 && stage == POST_APOGEE) {
+      if (median_altitude < main_altitude_meters && main_altitude_meters > 0 && stage == POST_APOGEE) {
         digitalWrite(MAIN_CTRL, HIGH);
         main_fired_micros = current_time;
       }
@@ -615,7 +625,7 @@ void loop() {
       } else {
         // Serial.println("Not firing drogue because: " + String(drogue_on_apogee) + ", " + String(stage));
       }
-      if (altitude < drogue_altitude_meters && drogue_altitude_meters > 0 && stage == POST_APOGEE) {
+      if (median_altitude < drogue_altitude_meters && drogue_altitude_meters > 0 && stage == POST_APOGEE) {
         digitalWrite(DROGUE_CTRL, HIGH);
         drogue_fired_micros = current_time;
       }

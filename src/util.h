@@ -1,8 +1,11 @@
 #include "Arduino.h"
 
+#define BUZZER_TIMER_CHANNEL 0
+
 void beep(uint16_t duration_ms);
 void queue_beep(int64_t beep_start_micros, int64_t beep_duration_micros);
 void updateAsyncBeep();
+void outputSiren(int64_t duration_ms);
 template <typename T> T median(T arr[], int len) {
   T temp[len];
   for (int i = 0; i < len; i++) {

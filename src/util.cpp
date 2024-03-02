@@ -42,3 +42,18 @@ void updateAsyncBeep() {
   }
 }
 
+void outputSiren(int64_t duration_ms) {
+  // Output pwm wave to buzzer pin varying volume to simulate siren (goes from 0 to 100% volume every 1s)
+  int64_t start = esp_timer_get_time();
+  int64_t end = start + duration_ms * 1000;
+  ledcSetup(BUZZER_TIMER_CHANNEL, 10000, 8);
+  ledcAttachPin(BUZZER_PIN, 0);
+  while (esp_timer_get_time() < end) {
+    float volume = cos((esp_timer_get_time() - start) * 2 * M_PI / 1000000) * 0.5 + 0.5;
+    ledcWrite(BUZZER_TIMER_CHANNEL, volume * 255);
+    Serial.println(volume * 255);
+    delay(10);
+  }
+  ledcDetachPin(BUZZER_PIN);
+}
+

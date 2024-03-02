@@ -27,12 +27,12 @@ File* log_file;
 File log_file_file;
 String log_file_name;
 int log_file_count = 0;
-float launch_detection_threshold = 30.48; // 100 feet
-float launch_detection_min_g = 2;
+float launch_detection_threshold = 30.48; // 100 feet by default
+float launch_detection_min_g = 2; // 2g by default
 int main_timer_ms = 0;
 int drogue_timer_ms = 0;
-int main_fire_duration_ms = 1000;
-int drogue_fire_duration_ms = 1000;
+int main_fire_duration_ms = 5000;
+int drogue_fire_duration_ms = 5000;
 float main_altitude_meters = 30.48;
 float drogue_altitude_meters = 0;
 bool main_on_apogee = false;
@@ -232,6 +232,8 @@ void setup() {
     log_file_file = SD.open("/log-" + String(log_file_count) + ".csv", FILE_WRITE, true);
     log_file = &log_file_file;
     log_file_name = "/log-" + String(log_file_count) + ".csv";
+
+    log_file_file.print("Time (micros), Pressure (Pa), Temperature (C), Altitude (m), Yaw (deg), Pitch (deg), Roll (deg), Ax (m/s^2), Ay (m/s^2), Az (m/s^2), Gx (deg/s), Gy (deg/s), Gz (deg/s), Drogue Detect (mV), Main Detect (mV), Stage, Main Fired (micros), Drogue Fired (micros)\n");
   } else {
     Serial.println("SD init failed!");
     log_file = NULL;
@@ -299,6 +301,8 @@ String popOldestLogLine() {
     "," + String(main_fired_micros) +
     "," + String(drogue_fired_micros) +
     "\n";
+
+  // Time (micros), Pressure (Pa), Temperature (C), Altitude (m), Yaw (deg), Pitch (deg), Roll (deg), Ax (m/s^2), Ay (m/s^2), Az (m/s^2), Gx (deg/s), Gy (deg/s), Gz (deg/s), Drogue Detect (mV), Main Detect (mV), Stage, Main Fired (micros), Drogue Fired (micros_
 
   // if (Serial.availableForWrite()) {
   //   Serial.print("POPPED, LOGGING: " + toRet);

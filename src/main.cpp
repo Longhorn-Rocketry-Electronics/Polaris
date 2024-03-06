@@ -11,6 +11,7 @@
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
 #include "circularbuffer.h"
+#include "servo.h"
 
 SPIClass sensor_spi = SPIClass(SPI2_HOST);
 SPIClass sd_spi = SPIClass(SPI3_HOST);
@@ -245,7 +246,8 @@ void setup() {
   Serial.print("Launch Detection Threshold: ");
   Serial.println(launch_detection_threshold);
 
-  
+  servoSetup();
+
 
 }
 
@@ -317,6 +319,8 @@ String popOldestLogLine() {
 void loop() {
   // put your main code here, to run repeatedly:
   updateAsyncBeep();
+
+  servoLoop();
 
 
   // if (stage == POST_APOGEE) {

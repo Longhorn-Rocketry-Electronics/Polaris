@@ -1,2 +1,0 @@
-void servoSetup();
-void servoLoop();

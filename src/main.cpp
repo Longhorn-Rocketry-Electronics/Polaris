@@ -7,11 +7,12 @@
 #include "util.h"
 #include "SD.h"
 #include <driver/adc.h>
-#include "MadgwickAHRS.h"
+// #include "MadgwickAHRS.h"
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
 #include "circularbuffer.h"
-#include "servo.h"
+#include "servo_controller.h"
+#include "Fusion.h"
 
 SPIClass sensor_spi = SPIClass(SPI2_HOST);
 SPIClass sd_spi = SPIClass(SPI3_HOST);
@@ -39,6 +40,7 @@ float drogue_altitude_meters = 0;
 bool main_on_apogee = false;
 bool drogue_on_apogee = true;
 
+FusionAhrs ori;
 
 void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable   detector
@@ -248,11 +250,11 @@ void setup() {
 
   servoSetup();
 
+  FusionAhrsInitialise(&ori);
 
 }
 
 
-Madgwick ori;
 
 bool output = false;
 byte num = 0;
@@ -318,9 +320,9 @@ String popOldestLogLine() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  updateAsyncBeep();
+  // updateAsyncBeep();
 
-  servoLoop();
+  servoLoop(yaw_buf.get(0), pitch_buf.get(0), roll_buf.get(0));
 
 
   // if (stage == POST_APOGEE) {
@@ -413,7 +415,14 @@ void loop() {
     int64_t time_of_read = esp_timer_get_time();
     bmi088.getGyroscope(&gx, &gy, &gz);
 
-    ori.updateIMU(gx, gy, gz, ax, ay, az, (time_of_read - last_motion_update_micros) / 1000000.0f);
+    // ori.updateIMU(gx, gy, gz, ax, ay, az, (time_of_read - last_motion_update_micros) / 1000000.0f);
+
+    const FusionVector gyroscope = {gx, gy, gz}; 
+    const FusionVector accelerometer = {ax, ay, az};
+
+    FusionAhrsUpdateNoMagnetometer(&ori, gyroscope, accelerometer, (time_of_read - last_motion_update_micros) / 1000000.0f);
+
+    const FusionEuler euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&ori));
 
     last_motion_update_micros = time_of_read;
 
@@ -441,9 +450,9 @@ void loop() {
     pressure_buf.push(pressure);
     temperature_buf.push(temperature);
     altitude_buf.push(altitude);
-    yaw_buf.push(ori.getYaw());
-    pitch_buf.push(ori.getPitch());
-    roll_buf.push(ori.getRoll());
+    yaw_buf.push(euler.angle.yaw);
+    pitch_buf.push(euler.angle.pitch);
+    roll_buf.push(euler.angle.roll);
     ax_buf.push(ax);
     ay_buf.push(ay);
     az_buf.push(az);
@@ -481,22 +490,25 @@ void loop() {
     }
 
     if (Serial.availableForWrite()) {
-      if (num % 10 == 0 || stage == LAUNCHED || stage == POST_APOGEE)
+      if (num % 10 == 0 || stage == LAUNCHED || stage == POST_APOGEE || true)
       {
         Serial.println(
-          String(time_of_read) + 
-          "," + String(altitude) +
-          "," + String(drogue_fired_micros) + 
-          "," + String(stage) +
-          ", " + time_buf.length() +
-          ", " + String(lognum)
+          String("Orientation:") + 
+          String(yaw_buf.get(0)) +
+          "," + String(pitch_buf.get(0)) +
+          "," + String(roll_buf.get(0)) +
+          "," + String(gx) +
+          "," + String(gy) +
+          "," + String(gz)
+          // ", " + time_buf.length() +
+          // ", " + String(lognum)
         );
         Serial.flush();
       }
       if (num == 100) {
         num = 0;
         if (log_file == NULL) {
-          Serial.println("LOG FILE IS NULL");
+          // Serial.println("LOG FILE IS NULL");
         }
       }
       num++;

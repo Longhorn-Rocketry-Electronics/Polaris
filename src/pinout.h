@@ -23,3 +23,8 @@
 
 #define V5_ENABLE 40
 #define V5_BOOST 41
+
+#define SERVO_1 15
+#define SERVO_2 16
+#define SERVO_3 17
+#define SERVO_4 18

@@ -651,6 +651,14 @@
     [
       "503f01d5-a0c6-4ade-b485-97c3c2e1d6c5",
       "Root"
+    ],
+    [
+      "d86517eb-360d-4060-baee-e492ce59cf4e",
+      "PressureSensor"
+    ],
+    [
+      "7f045433-1815-4664-8aa3-5209c8b2a885",
+      "Step Down Converter"
     ]
   ],
   "text_variables": {}

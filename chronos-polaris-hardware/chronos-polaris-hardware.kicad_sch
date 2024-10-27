@@ -2308,231 +2308,6 @@
 				)
 			)
 		)
-		(symbol "polaris-sym:BMP280"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "BMP280"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "polaris-fp:LGA-8_L2.5-W2.0-P0.65_AMP6127"
-				(at 0 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://cn.bing.com/search?q=datasheet%3A+%20AMP6127"
-				(at -2.286 0.127 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC" "C83291"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "C83291"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "BMP280_0_1"
-				(rectangle
-					(start -10.16 10.16)
-					(end 10.16 -10.16)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin unspecified line
-					(at 15.24 7.62 180)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 15.24 2.54 180)
-					(length 5.08)
-					(name "CSB"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 15.24 -2.54 180)
-					(length 5.08)
-					(name "SDI"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 15.24 -7.62 180)
-					(length 5.08)
-					(name "SCK"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -15.24 -7.62 0)
-					(length 5.08)
-					(name "SDO"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -15.24 -2.54 0)
-					(length 5.08)
-					(name "VDDIO"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -15.24 2.54 0)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -15.24 7.62 0)
-					(length 5.08)
-					(name "VDD"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "polaris-sym:ESP32-S2-SOLO-2-N4"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -6644,7 +6419,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 73.66) (xy 240.03 73.66)
+			(xy 233.68 73.66) (xy 242.57 73.66)
 		)
 		(stroke
 			(width 0)
@@ -6774,7 +6549,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 78.74) (xy 86.36 76.2)
+			(xy 86.36 78.74) (xy 86.36 77.47)
 		)
 		(stroke
 			(width 0)
@@ -6821,6 +6596,16 @@
 			(type default)
 		)
 		(uuid "1c3f5b43-57ae-4956-aef4-e5ab0a368077")
+	)
+	(wire
+		(pts
+			(xy 260.35 60.96) (xy 270.51 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1cd495a9-1f81-46ea-b038-be65e5d4d20a")
 	)
 	(wire
 		(pts
@@ -6961,6 +6746,16 @@
 			(type default)
 		)
 		(uuid "2d6aeba8-d41e-4212-8b5a-3d99b82b2adc")
+	)
+	(wire
+		(pts
+			(xy 238.76 60.96) (xy 242.57 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2dd9cf1d-794a-430b-8d86-522042729ca8")
 	)
 	(wire
 		(pts
@@ -7194,6 +6989,16 @@
 	)
 	(wire
 		(pts
+			(xy 270.51 67.31) (xy 270.51 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "414bbfd0-a8aa-403f-aecc-f5b2373c8297")
+	)
+	(wire
+		(pts
 			(xy 279.4 135.89) (xy 284.48 135.89)
 		)
 		(stroke
@@ -7284,16 +7089,6 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 77.47) (xy 240.03 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4a7435e4-5fa2-4f9c-9400-3bb2e4ea3986")
-	)
-	(wire
-		(pts
 			(xy 175.26 57.15) (xy 175.26 74.93)
 		)
 		(stroke
@@ -7341,6 +7136,16 @@
 			(type default)
 		)
 		(uuid "4c323bd8-8ab5-475b-a3cf-2cd2ffff6ecc")
+	)
+	(wire
+		(pts
+			(xy 270.51 60.96) (xy 270.51 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c3e3e4c-9a91-4887-9f6d-7ac77cfae54a")
 	)
 	(wire
 		(pts
@@ -7734,16 +7539,6 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 73.66) (xy 270.51 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "705aa68e-3eda-4713-869f-b9bd630ac136")
-	)
-	(wire
-		(pts
 			(xy 93.98 166.37) (xy 74.93 166.37)
 		)
 		(stroke
@@ -7834,6 +7629,16 @@
 	)
 	(wire
 		(pts
+			(xy 260.35 73.66) (xy 271.78 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76f4581c-4650-4036-a6a2-75d992d8babf")
+	)
+	(wire
+		(pts
 			(xy 180.34 73.66) (xy 176.53 73.66)
 		)
 		(stroke
@@ -7844,7 +7649,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 76.2) (xy 97.79 76.2)
+			(xy 86.36 77.47) (xy 97.79 77.47)
 		)
 		(stroke
 			(width 0)
@@ -9104,6 +8909,16 @@
 	)
 	(wire
 		(pts
+			(xy 240.03 67.31) (xy 242.57 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1e7564e-e458-4a03-824d-fddc70df82f2")
+	)
+	(wire
+		(pts
 			(xy 182.88 85.09) (xy 182.88 69.85)
 		)
 		(stroke
@@ -9134,6 +8949,16 @@
 	)
 	(wire
 		(pts
+			(xy 260.35 67.31) (xy 270.51 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f58e46cf-8d9e-4875-9a97-4a12dcfdcb71")
+	)
+	(wire
+		(pts
 			(xy 124.46 30.48) (xy 125.73 30.48)
 		)
 		(stroke
@@ -9154,7 +8979,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 76.2) (xy 97.79 90.17)
+			(xy 97.79 77.47) (xy 97.79 90.17)
 		)
 		(stroke
 			(width 0)
@@ -9571,6 +9396,28 @@
 			)
 		)
 	)
+	(global_label "3.3V"
+		(shape input)
+		(at 240.03 67.31 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0acb0166-7f8a-46b0-bef2-527612f5ef61")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 232.9324 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "5V_ENABLE"
 		(shape input)
 		(at 213.36 97.79 0)
@@ -9589,28 +9436,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "3.3V"
-		(shape input)
-		(at 240.03 58.42 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0e00414a-609a-4274-9048-9ac17fdc2d63")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 233.0118 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -9699,28 +9524,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "3.3V"
-		(shape input)
-		(at 240.03 68.58 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "474b110c-63b8-4703-9ca3-56c1ec7d9989")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 233.0118 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -10891,72 +10694,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 240.03 63.5 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1dc0d2a8-46af-44d9-865a-bd3b3b806f49")
-		(property "Reference" "#PWR06"
-			(at 233.68 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 241.3 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 240.03 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 240.03 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 240.03 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a8012f2c-0ce1-4540-834b-aa99c6796d01")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
-					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 53.34 68.58 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11412,73 +11149,6 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(reference "#PWR09")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 270.51 58.42 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "276ce624-112a-4b02-8054-fec4629bba0a")
-		(property "Reference" "#PWR07"
-			(at 276.86 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 274.32 59.055 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 270.51 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 270.51 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 270.51 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e414b921-01b0-424a-9380-bd1c47d997dc")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
-					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -12701,75 +12371,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 240.03 72.39 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "450dc71c-7c53-4d4b-935a-f2c6aab441bc")
-		(property "Reference" "C7"
-			(at 241.3 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 240.03 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 240.9952 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 240.03 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 240.03 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "88706618-e45f-478b-a436-a2c294673801")
-		)
-		(pin "2"
-			(uuid "6bd3f835-d39e-4b44-b09c-e80a66ddc8e8")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
-					(reference "C7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "polaris-sym:WJ124-3_81-6P")
 		(at 48.26 66.04 0)
 		(unit 1)
@@ -13401,103 +13002,6 @@
 		)
 	)
 	(symbol
-		(lib_id "polaris-sym:BMP280")
-		(at 255.27 66.04 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "593c2354-64ae-46ee-8e12-7f89b5f3ae62")
-		(property "Reference" "U4"
-			(at 255.27 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "BMP280"
-			(at 255.27 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "polaris-fp:LGA-8_L2.5-W2.0-P0.65_AMP6127"
-			(at 255.27 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cn.bing.com/search?q=datasheet%3A+%20AMP6127"
-			(at 252.984 65.913 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 255.27 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C83291"
-			(at 255.27 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f7cdf24e-87b3-4bb4-99b7-c8ac14e3fafa")
-		)
-		(pin "2"
-			(uuid "a517a5dc-68e5-4fe7-8d64-e0b6c61a53ad")
-		)
-		(pin "3"
-			(uuid "e9c96637-7007-43a7-94b1-672aa9a96cda")
-		)
-		(pin "4"
-			(uuid "98b6382f-0991-4dba-998e-e032281d1182")
-		)
-		(pin "5"
-			(uuid "5b137239-4a7a-48be-8229-29947bb9185b")
-		)
-		(pin "6"
-			(uuid "81d3cbe3-4cf1-45ff-9010-7f660d03c35e")
-		)
-		(pin "7"
-			(uuid "cf0fb0b0-d8df-44cf-b149-9e381f6738fb")
-		)
-		(pin "8"
-			(uuid "04853f7f-f933-42f6-ad60-8f7642635b12")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
-					(reference "U4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 157.48 101.6 0)
 		(unit 1)
@@ -13691,72 +13195,6 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(reference "#PWR046")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 240.03 77.47 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6090dd61-16aa-4f6d-9862-8a1109736c72")
-		(property "Reference" "#PWR028"
-			(at 240.03 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 242.57 76.2 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 240.03 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 240.03 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 240.03 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "914df22e-530c-4ec2-ad05-417a03472dfb")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
-					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -15327,6 +14765,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 238.76 60.96 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9360a7c8-aff9-445b-b374-ae9d2e75730a")
+		(property "Reference" "#PWR06"
+			(at 232.41 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 234.95 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 238.76 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 238.76 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 238.76 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "87187b3a-d624-4a95-9738-b3b773b0ecbb")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 236.22 146.05 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15460,75 +14964,6 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(reference "J7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 240.03 54.61 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "99f1ea16-8ad0-47ca-9dfe-dd2145feb490")
-		(property "Reference" "C6"
-			(at 241.3 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "100nF"
-			(at 242.57 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 239.0648 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 240.03 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 240.03 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "98b4486f-b1b1-459a-b050-10e3afccb5f5")
-		)
-		(pin "2"
-			(uuid "4223eba7-684d-4249-8d35-ac995d9d459b")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
-					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -18341,72 +17776,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 240.03 50.8 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e5eef880-e772-4056-bcee-9ff13090e9dc")
-		(property "Reference" "#PWR027"
-			(at 240.03 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 237.49 52.07 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 240.03 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 240.03 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 240.03 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b0ac7519-6634-4f29-9f89-184720ce5511")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
-					(reference "#PWR027")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 77.47 118.11 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -18602,6 +17971,142 @@
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(reference "#PWR054")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at -85.09 129.54)
+		(size 33.02 35.56)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "7f045433-1815-4664-8aa3-5209c8b2a885")
+		(property "Sheetname" "Step Down Converter"
+			(at -85.09 128.8284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "stepDownConverter.kicad_sch"
+			(at -85.09 165.6846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 242.57 57.15)
+		(size 17.78 20.32)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "d86517eb-360d-4060-baee-e492ce59cf4e")
+		(property "Sheetname" "PressureSensor"
+			(at 242.57 56.4384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "pressureSensor.kicad_sch"
+			(at 242.57 78.0546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "GND" input
+			(at 242.57 60.96 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "86d222ea-6266-41ef-bbbe-f28c0a9f0ff8")
+		)
+		(pin "SDO" input
+			(at 242.57 73.66 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "cb060ca1-66df-420c-910a-849670c4ba94")
+		)
+		(pin "3.3V" input
+			(at 242.57 67.31 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "a7870518-3631-4dbc-a027-3970af0d93a6")
+		)
+		(pin "CSB" input
+			(at 260.35 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "68b9f2fc-28cb-4735-add3-3e22038eb54f")
+		)
+		(pin "SDI" input
+			(at 260.35 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "92ac9f56-5d61-45a7-a80f-29232ddb8dee")
+		)
+		(pin "SCK" input
+			(at 260.35 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f917b570-1831-4982-a14a-bcc55b3ca465")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(page "2")
 				)
 			)
 		)

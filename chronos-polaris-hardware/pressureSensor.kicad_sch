@@ -1,0 +1,873 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "83583a19-4516-443f-84d7-7578c799a9dc")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Device:C"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "polaris-sym:BMP280"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BMP280"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "polaris-fp:LGA-8_L2.5-W2.0-P0.65_AMP6127"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://cn.bing.com/search?q=datasheet%3A+%20AMP6127"
+				(at -2.286 0.127 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C83291"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "C83291"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "BMP280_0_1"
+				(rectangle
+					(start -10.16 10.16)
+					(end 10.16 -10.16)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin unspecified line
+					(at 15.24 7.62 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 15.24 2.54 180)
+					(length 5.08)
+					(name "CSB"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 15.24 -2.54 180)
+					(length 5.08)
+					(name "SDI"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 15.24 -7.62 180)
+					(length 5.08)
+					(name "SCK"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -15.24 -7.62 0)
+					(length 5.08)
+					(name "SDO"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -15.24 -2.54 0)
+					(length 5.08)
+					(name "VDDIO"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -15.24 2.54 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -15.24 7.62 0)
+					(length 5.08)
+					(name "VDD"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 81.28 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3c02820f-d274-4be1-b8f4-24a876036bc5")
+	)
+	(junction
+		(at 92.71 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4e00b4be-19e7-4805-a477-4a1e569f31e4")
+	)
+	(junction
+		(at 92.71 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6b7c4321-9926-484d-aa31-071f10efe84d")
+	)
+	(wire
+		(pts
+			(xy 73.66 82.55) (xy 81.28 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0775bffc-bde1-4ebb-9e2a-803224910ae5")
+	)
+	(wire
+		(pts
+			(xy 92.71 62.23) (xy 92.71 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12e697f9-f1e8-4797-9b84-6d2bf071d53b")
+	)
+	(wire
+		(pts
+			(xy 123.19 72.39) (xy 127 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f949494-c07f-43f7-9dca-73f5c1688313")
+	)
+	(wire
+		(pts
+			(xy 92.71 87.63) (xy 96.52 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65708570-7a92-4909-91a9-c0d2491392d1")
+	)
+	(wire
+		(pts
+			(xy 123.19 87.63) (xy 128.27 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65ec6c13-72d0-4b46-a371-96209340c5e2")
+	)
+	(wire
+		(pts
+			(xy 123.19 82.55) (xy 128.27 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7316f624-53ab-41d4-8b1e-715ba6d0ba9e")
+	)
+	(wire
+		(pts
+			(xy 71.12 72.39) (xy 92.71 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93e72612-0946-4c64-8bd8-1e108abdefde")
+	)
+	(wire
+		(pts
+			(xy 88.9 87.63) (xy 92.71 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0a13510-cbda-479a-9c9b-2391e3417045")
+	)
+	(wire
+		(pts
+			(xy 123.19 77.47) (xy 129.54 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa9a7daf-b4de-480b-bf63-c24e43cc6570")
+	)
+	(wire
+		(pts
+			(xy 81.28 82.55) (xy 92.71 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc412692-2a72-436a-8671-325901a5139c")
+	)
+	(wire
+		(pts
+			(xy 87.63 77.47) (xy 92.71 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e972389d-ce99-4f33-8219-073bcd19b0c6")
+	)
+	(wire
+		(pts
+			(xy 81.28 90.17) (xy 81.28 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "edee933f-bc01-44e7-ac88-1c1f21c6e2a4")
+	)
+	(wire
+		(pts
+			(xy 88.9 100.33) (xy 88.9 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fef7745c-aaf4-486d-ba69-b0807d240c7d")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 81.28 92.71 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "12457690-c40e-4145-8119-e4d693e23a47")
+	)
+	(hierarchical_label "3.3V"
+		(shape input)
+		(at 73.66 82.55 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "31cfc3fd-6b8e-4dff-b341-f5f9f18d9fc6")
+	)
+	(hierarchical_label "SDI"
+		(shape input)
+		(at 128.27 82.55 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3272d33b-f41b-434d-81aa-816460ff90af")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 92.71 62.23 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8b1326de-89c6-4772-8fae-a3b27a7fb763")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 87.63 77.47 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "906dbb0a-074f-4777-ab7a-ac6a6c222ad7")
+	)
+	(hierarchical_label "SDO"
+		(shape input)
+		(at 88.9 100.33 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a171d4ab-81ac-4317-9ede-ffd87bb5e386")
+	)
+	(hierarchical_label "CSB"
+		(shape input)
+		(at 129.54 77.47 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bc385635-3699-4f5d-966c-d88705530c28")
+	)
+	(hierarchical_label "SCK"
+		(shape input)
+		(at 128.27 87.63 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "df1cd5b6-aa39-478d-a292-81a53115e9bd")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 127 72.39 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e8e37a73-fb56-4ae8-9669-43711501b20f")
+	)
+	(hierarchical_label "3.3V"
+		(shape input)
+		(at 71.12 72.39 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f01790a6-39b3-4dd5-9be3-0e0bc3d09ea0")
+	)
+	(symbol
+		(lib_id "polaris-sym:BMP280")
+		(at 107.95 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1bec56c4-9398-4f49-b669-e2b9521d0cb6")
+		(property "Reference" "U9"
+			(at 107.95 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BMP280"
+			(at 107.95 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "polaris-fp:LGA-8_L2.5-W2.0-P0.65_AMP6127"
+			(at 107.95 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://cn.bing.com/search?q=datasheet%3A+%20AMP6127"
+			(at 105.664 79.883 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 107.95 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C83291"
+			(at 107.95 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9b2ac0bc-24d3-4479-809d-3807ec895972")
+		)
+		(pin "2"
+			(uuid "76facbfd-5b15-4b4d-8d8f-b83c7a90c66c")
+		)
+		(pin "3"
+			(uuid "11a0843d-c38b-4d03-b8c3-6d24b5b52fb2")
+		)
+		(pin "4"
+			(uuid "9982c6ed-a3db-4a27-89fb-2a8294c48dc8")
+		)
+		(pin "5"
+			(uuid "be749ebf-8f8a-4caf-b0cd-c76e3befd710")
+		)
+		(pin "6"
+			(uuid "0b732c49-5b8c-406e-92b5-108eb505086d")
+		)
+		(pin "7"
+			(uuid "d7c38fc7-d115-4bd0-83f9-d5309df30d14")
+		)
+		(pin "8"
+			(uuid "d940f758-c43f-4780-9da2-6baba821dd29")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/d86517eb-360d-4060-baee-e492ce59cf4e"
+					(reference "U9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 92.71 68.58 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "af85c58e-a96f-48cd-ba00-35a4ec725b23")
+		(property "Reference" "C13"
+			(at 93.98 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100nF"
+			(at 95.25 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 91.7448 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 92.71 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b94d43c0-0a80-4b59-80b3-513020e18554")
+		)
+		(pin "2"
+			(uuid "07b3323d-8765-40c8-80c1-916ed7b06359")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/d86517eb-360d-4060-baee-e492ce59cf4e"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 81.28 86.36 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d66e97bc-f01a-43c9-95ca-308ba3e71db5")
+		(property "Reference" "C14"
+			(at 82.55 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 81.28 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 82.2452 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 81.28 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 81.28 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2279c44a-03be-42e5-b67e-629e64dd57a2")
+		)
+		(pin "2"
+			(uuid "8aa6b653-741d-4ccf-9f78-a53ed62c5b64")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/d86517eb-360d-4060-baee-e492ce59cf4e"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

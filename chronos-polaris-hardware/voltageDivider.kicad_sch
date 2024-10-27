@@ -224,6 +224,12 @@
 		)
 	)
 	(junction
+		(at 93.98 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2b4db3aa-ed2d-4a27-bef3-84619d8d259e")
+	)
+	(junction
 		(at 93.98 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -259,6 +265,16 @@
 	)
 	(wire
 		(pts
+			(xy 93.98 71.12) (xy 105.41 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d911ff6-3485-448a-9034-bf065c0710fe")
+	)
+	(wire
+		(pts
 			(xy 100.33 105.41) (xy 119.38 105.41)
 		)
 		(stroke
@@ -276,6 +292,16 @@
 			(type default)
 		)
 		(uuid "91ead333-ed64-4862-8eba-ef8ca966f902")
+	)
+	(wire
+		(pts
+			(xy 105.41 72.39) (xy 105.41 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92e135bc-4ea6-4c42-a693-0337d894ce1f")
 	)
 	(wire
 		(pts
@@ -317,31 +343,29 @@
 		)
 		(uuid "d262ec1b-f2c8-4fb9-beb5-6d6a5f0c28a3")
 	)
-	(global_label "3.3V"
-		(shape input)
-		(at 105.41 72.39 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
+	(wire
+		(pts
+			(xy 93.98 71.12) (xy 93.98 72.39)
 		)
-		(uuid "b2d16aa8-d044-4bc7-997f-ebdb9256807c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 105.41 65.3718 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
+		(stroke
+			(width 0)
+			(type default)
 		)
+		(uuid "e249aeec-1fc7-4ee7-8bd2-42dc1e31b77a")
 	)
-	(global_label "3.3V"
+	(wire
+		(pts
+			(xy 93.98 69.85) (xy 93.98 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea604b89-6cf1-469d-9145-d93a415a268f")
+	)
+	(hierarchical_label "3.3V"
 		(shape input)
-		(at 93.98 72.39 90)
+		(at 93.98 69.85 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -349,17 +373,7 @@
 			)
 			(justify left)
 		)
-		(uuid "fc31cb06-ac1f-48bf-bbb2-71561386ebc6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 93.98 65.3718 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
+		(uuid "37cc1d67-a87c-47c6-9dd5-0e948b610b90")
 	)
 	(hierarchical_label "Drogue Detect"
 		(shape input)

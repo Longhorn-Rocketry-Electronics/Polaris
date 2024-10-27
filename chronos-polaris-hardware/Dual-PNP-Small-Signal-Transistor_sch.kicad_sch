@@ -1462,7 +1462,6 @@
 		(pin "1"
 			(uuid "797ab75e-c114-4e56-a3a2-b1251fb44d60")
 		)
-		(instances)
 	)
 	(symbol
 		(lib_id "polaris-sym:AP20P30Q")
@@ -1557,7 +1556,6 @@
 		(pin "9"
 			(uuid "9a36e5a1-e72f-4121-8e8a-21ce4157f66e")
 		)
-		(instances)
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -1619,7 +1617,6 @@
 		(pin "2"
 			(uuid "75ef3e89-b378-43af-af9e-d44f30b33eec")
 		)
-		(instances)
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -1678,7 +1675,6 @@
 		(pin "1"
 			(uuid "118a827b-6ff0-4c61-b000-6eca9de02460")
 		)
-		(instances)
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -1740,7 +1736,6 @@
 		(pin "2"
 			(uuid "94b887c2-8aaf-4396-8ccd-dc0d34a13c4c")
 		)
-		(instances)
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -1798,7 +1793,6 @@
 		(pin "1"
 			(uuid "6782bc93-5415-47c1-888e-7ce3953072f4")
 		)
-		(instances)
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -1857,7 +1851,6 @@
 		(pin "1"
 			(uuid "af0c79bc-a199-40bc-bb36-da2360db2647")
 		)
-		(instances)
 	)
 	(symbol
 		(lib_id "polaris-sym:AP20P30Q")
@@ -1952,7 +1945,6 @@
 		(pin "9"
 			(uuid "fee34f2f-8a2b-4296-ba07-64516dfb6ed4")
 		)
-		(instances)
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -2015,7 +2007,6 @@
 		(pin "2"
 			(uuid "8a3bd143-4508-43c6-a1c9-9b081897474d")
 		)
-		(instances)
 	)
 	(symbol
 		(lib_id "polaris-sym:2N7002KDW_72K")
@@ -2101,7 +2092,6 @@
 		(pin "6"
 			(uuid "419d0f9d-5201-4f3d-9652-23398ca12d7c")
 		)
-		(instances)
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -2164,6 +2154,5 @@
 		(pin "2"
 			(uuid "8089d210-7ba9-449d-ad34-114ce5efd5e4")
 		)
-		(instances)
 	)
 )

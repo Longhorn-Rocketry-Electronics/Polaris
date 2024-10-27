@@ -627,6 +627,14 @@
     [
       "85b8a09c-24c3-4ca3-afe0-fa376013540b",
       "Switching Voltage Regulator"
+    ],
+    [
+      "97b61835-1bd5-4048-92e6-24e014b2d83b",
+      "Voltage Divider"
+    ],
+    [
+      "b17a1e34-a425-4a76-9024-09bab64e950b",
+      "TypeC"
     ]
   ],
   "text_variables": {}

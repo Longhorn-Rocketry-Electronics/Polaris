@@ -1314,7 +1314,7 @@
 			)
 		)
 	)
-	(hierarchical_label "unknown1"
+	(hierarchical_label "BAT+"
 		(shape input)
 		(at 88.9 72.39 0)
 		(fields_autoplaced yes)

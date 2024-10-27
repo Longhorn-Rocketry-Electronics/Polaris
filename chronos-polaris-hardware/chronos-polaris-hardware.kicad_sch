@@ -12413,7 +12413,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 35.56 128.27 0)
+		(at 26.67 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12422,7 +12422,7 @@
 		(fields_autoplaced yes)
 		(uuid "3e8412ee-343f-4a9b-adeb-173d216f7694")
 		(property "Reference" "H1"
-			(at 38.1 127.635 0)
+			(at 29.21 81.915 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12431,7 +12431,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 38.1 130.175 0)
+			(at 29.21 84.455 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12440,7 +12440,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
-			(at 35.56 128.27 0)
+			(at 26.67 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12449,7 +12449,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 35.56 128.27 0)
+			(at 26.67 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12458,7 +12458,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 35.56 128.27 0)
+			(at 26.67 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)

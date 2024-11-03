@@ -1053,7 +1053,7 @@
 		(uuid "1dd566d0-cd0f-43a9-9d20-86c925339c12")
 	)
 	(hierarchical_label "3.3V"
-		(shape input)
+		(shape output)
 		(at 167.64 77.47 0)
 		(fields_autoplaced yes)
 		(effects

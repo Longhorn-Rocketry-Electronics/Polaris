@@ -1079,6 +1079,229 @@
 				)
 			)
 		)
+		(symbol "US6K4TR:US6K4TR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 26.67 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "US6K4TR"
+				(at 26.67 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "US6K4TR"
+				(at 26.67 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://fscdn.rohm.com/en/products/databook/datasheet/discrete/transistor/mosfet/us6k4.pdf"
+				(at 26.67 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mosfet Array 2 N-Channel (Dual) 20V 1.5A 1W Surface Mount TUMT6"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "0.85"
+				(at 26.67 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "755-US6K4TR"
+				(at 26.67 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ROHM-Semiconductor/US6K4TR?qs=IJ4m%2FCjbxWe5W6oP8dNQeg%3D%3D"
+				(at 26.67 -594.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "ROHM Semiconductor"
+				(at 26.67 -694.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "US6K4TR"
+				(at 26.67 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "US6K4TR_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 25.4 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "TR1_S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "TR1_G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "TR2_D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -5.08 180)
+					(length 5.08)
+					(name "TR2_S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -2.54 180)
+					(length 5.08)
+					(name "TR2_G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 0 180)
+					(length 5.08)
+					(name "TR1_D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "polaris-sym:BMI088"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3778,6 +4001,12 @@
 		(uuid "0e21c139-1cfe-4b2b-a768-83256ff624fe")
 	)
 	(junction
+		(at 148.59 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2118bb53-2b29-4c21-9140-fde3dabfd867")
+	)
+	(junction
 		(at 81.28 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3808,10 +4037,28 @@
 		(uuid "6ae3a5c6-084b-4d76-824a-1573b7f5d628")
 	)
 	(junction
+		(at 121.92 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6bbc32c8-252a-443f-a2d5-674486a5678b")
+	)
+	(junction
 		(at 281.94 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6ce3ac2f-87e1-4d8f-b029-c0cbaf62dc32")
+	)
+	(junction
+		(at 74.93 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "72365013-e00e-4085-a2e5-1e8f2d67b3f8")
+	)
+	(junction
+		(at 59.69 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "811665e2-0f12-4755-9c40-a4a72e9a032f")
 	)
 	(junction
 		(at 179.07 115.57)
@@ -3824,6 +4071,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9837306d-99b8-4b69-8829-ce27f868ec08")
+	)
+	(junction
+		(at 57.15 68.58)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b8a66d22-5157-4b32-bc02-c6b70b8d62e1")
+	)
+	(junction
+		(at 63.5 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c2684249-2a10-4525-b5e1-a573f9c132e8")
 	)
 	(junction
 		(at 273.05 114.3)
@@ -3993,6 +4252,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.15 68.58) (xy 57.15 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0749d51a-c7c3-48f7-80af-44133c2087dd")
+	)
+	(wire
+		(pts
 			(xy 222.25 115.57) (xy 234.95 115.57)
 		)
 		(stroke
@@ -4143,26 +4412,6 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 129.54) (xy 59.69 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1a9c71c1-86ac-4061-9d09-a616ea361354")
-	)
-	(wire
-		(pts
-			(xy 58.42 93.98) (xy 68.58 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1ac003bc-7c3b-4a3f-b643-b008f0e82040")
-	)
-	(wire
-		(pts
 			(xy 224.79 110.49) (xy 213.36 110.49)
 		)
 		(stroke
@@ -4263,6 +4512,16 @@
 	)
 	(wire
 		(pts
+			(xy 71.12 106.68) (xy 107.95 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2aef31cf-41e9-437a-afd0-4bdb5fed0b2f")
+	)
+	(wire
+		(pts
 			(xy 86.36 93.98) (xy 73.66 93.98)
 		)
 		(stroke
@@ -4353,16 +4612,6 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 121.92) (xy 76.2 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "30c722a3-2617-4e8a-905d-e038039e3750")
-	)
-	(wire
-		(pts
 			(xy 127 143.51) (xy 127 148.59)
 		)
 		(stroke
@@ -4390,6 +4639,16 @@
 			(type default)
 		)
 		(uuid "359c8a50-e9aa-42dd-9b82-1d7262e0e065")
+	)
+	(wire
+		(pts
+			(xy 53.34 68.58) (xy 57.15 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37bd16e4-57e3-412f-a54e-b50ad6966f5a")
 	)
 	(wire
 		(pts
@@ -4523,6 +4782,16 @@
 	)
 	(wire
 		(pts
+			(xy 74.93 53.34) (xy 74.93 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49b39e1c-4ace-4b2f-a225-8e153cb6bb38")
+	)
+	(wire
+		(pts
 			(xy 175.26 57.15) (xy 175.26 74.93)
 		)
 		(stroke
@@ -4573,6 +4842,26 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 110.49) (xy 148.59 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4cb5f487-6cda-4098-83db-a243994d26e1")
+	)
+	(wire
+		(pts
+			(xy 76.2 119.38) (xy 121.92 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5066aab7-6259-44f4-ad28-7b7980fffe80")
+	)
+	(wire
+		(pts
 			(xy 173.99 76.2) (xy 173.99 67.31)
 		)
 		(stroke
@@ -4590,6 +4879,16 @@
 			(type default)
 		)
 		(uuid "5346a0a4-91d1-453d-8890-c089e7b99160")
+	)
+	(wire
+		(pts
+			(xy 107.95 106.68) (xy 107.95 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54d7f535-4093-4124-98f2-c16c1536fc86")
 	)
 	(wire
 		(pts
@@ -4663,6 +4962,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 60.96) (xy 63.5 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59308057-699e-457a-8389-c545c2112118")
+	)
+	(wire
+		(pts
 			(xy 237.49 116.84) (xy 237.49 120.65)
 		)
 		(stroke
@@ -4720,6 +5029,26 @@
 			(type default)
 		)
 		(uuid "5eee4f61-7808-42ca-b2fd-92bd5e377e77")
+	)
+	(wire
+		(pts
+			(xy 74.93 53.34) (xy 81.28 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f41a1ca-44b2-4fd8-92be-67c7b79059ff")
+	)
+	(wire
+		(pts
+			(xy 71.12 106.68) (xy 71.12 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f86c12e-c053-48d2-b047-2a6d28910632")
 	)
 	(wire
 		(pts
@@ -4793,6 +5122,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 110.49) (xy 111.76 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6dcbe563-3a2b-470a-8851-4a0cbae821bc")
+	)
+	(wire
+		(pts
 			(xy 161.29 57.15) (xy 175.26 57.15)
 		)
 		(stroke
@@ -4800,6 +5139,16 @@
 			(type default)
 		)
 		(uuid "71af0983-ee64-42b8-98a2-e72bf9abcdd3")
+	)
+	(wire
+		(pts
+			(xy 53.34 78.74) (xy 53.34 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7242213c-dd90-42c1-9292-0755c4404c93")
 	)
 	(wire
 		(pts
@@ -4883,13 +5232,13 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 110.49) (xy 161.29 110.49)
+			(xy 121.92 119.38) (xy 121.92 118.11)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "788574cb-8872-4847-b840-4c1215a383ec")
+		(uuid "777f90dc-4cf6-42f9-bb38-74ee144f4eab")
 	)
 	(wire
 		(pts
@@ -4910,6 +5259,16 @@
 			(type default)
 		)
 		(uuid "7d319455-239f-48c5-b933-da2d95a4eedd")
+	)
+	(wire
+		(pts
+			(xy 111.76 113.03) (xy 107.95 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e600c02-6e19-4f09-9607-22dccda9b137")
 	)
 	(wire
 		(pts
@@ -4943,7 +5302,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 73.66) (xy 58.42 73.66)
+			(xy 53.34 73.66) (xy 74.93 73.66)
 		)
 		(stroke
 			(width 0)
@@ -4993,6 +5352,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 110.49) (xy 161.29 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8744a5d6-db0e-427c-a5ab-43abdfd43851")
+	)
+	(wire
+		(pts
 			(xy 186.69 134.62) (xy 193.04 134.62)
 		)
 		(stroke
@@ -5010,6 +5379,16 @@
 			(type default)
 		)
 		(uuid "8883f385-d83a-4e62-ab12-acf4b9c58d9a")
+	)
+	(wire
+		(pts
+			(xy 76.2 113.03) (xy 77.47 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ac009fd-fe5e-4ffb-838a-c4ffe421e80f")
 	)
 	(wire
 		(pts
@@ -5060,6 +5439,16 @@
 			(type default)
 		)
 		(uuid "947719e0-bd3a-46e2-b120-d68b6c3d5226")
+	)
+	(wire
+		(pts
+			(xy 63.5 53.34) (xy 74.93 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "948cdf64-1c06-47b7-bd45-86f344941886")
 	)
 	(wire
 		(pts
@@ -5133,6 +5522,16 @@
 	)
 	(wire
 		(pts
+			(xy 74.93 62.23) (xy 74.93 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f304a07-bf30-44b7-9b02-ba4acfeea28d")
+	)
+	(wire
+		(pts
 			(xy 219.71 81.28) (xy 219.71 82.55)
 		)
 		(stroke
@@ -5140,16 +5539,6 @@
 			(type default)
 		)
 		(uuid "9f62327c-50ee-40fb-a8f3-18d50a682270")
-	)
-	(wire
-		(pts
-			(xy 68.58 113.03) (xy 76.2 113.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a1ac6cb4-4d0a-43c5-ac2a-f792f61942e2")
 	)
 	(wire
 		(pts
@@ -5230,16 +5619,6 @@
 			(type default)
 		)
 		(uuid "a908dbca-d669-43d7-a802-4af461c3f34d")
-	)
-	(wire
-		(pts
-			(xy 57.15 63.5) (xy 57.15 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aaa92251-c55c-4a99-ad6b-1c93c719ac44")
 	)
 	(wire
 		(pts
@@ -5330,6 +5709,16 @@
 			(type default)
 		)
 		(uuid "b2437715-8ec0-4d27-8a60-10a561b26a58")
+	)
+	(wire
+		(pts
+			(xy 121.92 118.11) (xy 129.54 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b278cb20-8f31-4c44-94be-94150ae5bcd5")
 	)
 	(wire
 		(pts
@@ -5443,16 +5832,6 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 118.11) (xy 129.54 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c41a726f-478f-4839-b266-a04e4beb4455")
-	)
-	(wire
-		(pts
 			(xy 170.18 20.32) (xy 241.3 20.32)
 		)
 		(stroke
@@ -5523,7 +5902,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 63.5) (xy 57.15 63.5)
+			(xy 53.34 63.5) (xy 63.5 63.5)
 		)
 		(stroke
 			(width 0)
@@ -5603,26 +5982,6 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 121.92) (xy 72.39 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d85505d1-91a5-4a7f-b84f-2162ab50bee3")
-	)
-	(wire
-		(pts
-			(xy 58.42 73.66) (xy 58.42 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d8abf347-3217-4716-bb4b-e96dc834b564")
-	)
-	(wire
-		(pts
 			(xy 163.83 92.71) (xy 190.5 92.71)
 		)
 		(stroke
@@ -5653,16 +6012,6 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 93.98) (xy 68.58 113.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e103e835-d188-457b-8469-4e6755d8f7ea")
-	)
-	(wire
-		(pts
 			(xy 213.36 113.03) (xy 217.17 113.03)
 		)
 		(stroke
@@ -5670,6 +6019,16 @@
 			(type default)
 		)
 		(uuid "e412836d-00d0-41a1-b752-40db756a0579")
+	)
+	(wire
+		(pts
+			(xy 53.34 115.57) (xy 59.69 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5a8e111-81cb-45cd-ab4a-5c0cd0e5745c")
 	)
 	(wire
 		(pts
@@ -5693,7 +6052,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 53.34) (xy 81.28 53.34)
+			(xy 53.34 53.34) (xy 63.5 53.34)
 		)
 		(stroke
 			(width 0)
@@ -5720,6 +6079,16 @@
 			(type default)
 		)
 		(uuid "e708bfe9-2c97-439f-87a3-7ca177e5edee")
+	)
+	(wire
+		(pts
+			(xy 57.15 68.58) (xy 71.12 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7edfed5-6b0f-4807-95d9-0fae58d093f3")
 	)
 	(wire
 		(pts
@@ -5763,7 +6132,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 129.54) (xy 59.69 143.51)
+			(xy 59.69 115.57) (xy 59.69 143.51)
 		)
 		(stroke
 			(width 0)
@@ -5820,6 +6189,26 @@
 			(type default)
 		)
 		(uuid "f58e46cf-8d9e-4875-9a97-4a12dcfdcb71")
+	)
+	(wire
+		(pts
+			(xy 76.2 119.38) (xy 76.2 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f75fd44e-7878-459f-bd8d-bc9dd1ce5dce")
+	)
+	(wire
+		(pts
+			(xy 59.69 115.57) (xy 77.47 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8198bf0-f181-46a1-8f92-cd3550c1f226")
 	)
 	(wire
 		(pts
@@ -6912,15 +7301,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 53.34 68.58 90)
+		(at 148.59 102.87 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1fb8c368-7c2f-4eb8-86bd-08fe341f8c56")
-		(property "Reference" "#PWR01"
-			(at 59.69 68.58 0)
+		(uuid "15632e80-1e61-4262-ac69-143e5f6fe9c6")
+		(property "Reference" "#PWR042"
+			(at 148.59 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6929,16 +7318,15 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 50.8 69.85 90)
+			(at 146.05 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 68.58 0)
+			(at 148.59 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6947,7 +7335,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 68.58 0)
+			(at 148.59 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6956,7 +7344,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 53.34 68.58 0)
+			(at 148.59 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6965,12 +7353,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "6a482fda-4da8-4752-8c8f-8c648a44ff3a")
+			(uuid "a6cb28ae-727e-46c7-9b1d-b27320d2b3e2")
 		)
 		(instances
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
-					(reference "#PWR01")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -7374,6 +7762,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 121.92 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2ba78d91-28a5-48bf-a7a4-567c3b7257b6")
+		(property "Reference" "#PWR043"
+			(at 121.92 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 124.46 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c56ff673-05a8-4237-a55e-055087657bbd")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(reference "#PWR043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "polaris-sym:ESP32-S2-SOLO-2-N4")
 		(at 201.93 104.14 0)
 		(unit 1)
@@ -7630,6 +8083,76 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 74.93 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3a51e511-0da1-473e-b010-514625abdcda")
+		(property "Reference" "R13"
+			(at 77.47 57.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "?"
+			(at 77.47 59.6899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 73.152 58.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 74.93 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6a82210e-f7f4-4ebf-98b1-36e8af22e772")
+		)
+		(pin "2"
+			(uuid "9208d889-1813-4519-8393-3e609324b988")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -8422,6 +8945,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 107.95 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6d8b18bc-4aea-4b29-8138-0159493036f9")
+		(property "Reference" "#PWR01"
+			(at 107.95 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 110.49 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 107.95 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 107.95 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4ab1b89a-c8c1-4999-9328-62dab7176954")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "polaris-sym:MSK12C02-HB")
 		(at 83.82 88.9 0)
 		(unit 1)
@@ -8685,6 +9273,141 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 77.47 110.49 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8998691e-6e43-41f4-87b1-f68e2be92abe")
+		(property "Reference" "#PWR03"
+			(at 77.47 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 74.93 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 77.47 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 77.47 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b02dda10-a2c1-4829-bc67-ce8d4dfd2210")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 63.5 57.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8dcaceb5-8510-4038-bde5-496e5244accf")
+		(property "Reference" "R12"
+			(at 66.04 55.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "?"
+			(at 66.04 58.4199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 61.722 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 63.5 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 63.5 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8b009caa-3cbc-44b8-a703-55586a1521ab")
+		)
+		(pin "2"
+			(uuid "67aa70b4-9d18-422f-91fc-a1921969cbe1")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -8957,6 +9680,75 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 148.59 106.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a06235bf-7c37-4824-85d4-a1a972d176af")
+		(property "Reference" "R4"
+			(at 152.4 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 151.13 108.585 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 146.812 106.68 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 148.59 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 148.59 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d948ab10-9173-4b79-8f60-82e6e308ae6c")
+		)
+		(pin "2"
+			(uuid "4e639ec1-2e7e-4b72-a011-0537fee5abe2")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -9363,72 +10155,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 53.34 78.74 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c05da131-ad67-47eb-b036-a627dc51c3a6")
-		(property "Reference" "#PWR03"
-			(at 59.69 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 50.8 80.01 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 53.34 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 53.34 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 53.34 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "245cdf3b-3007-4a1d-8d6e-b7c739bc4e98")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
-					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 227.33 156.21 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9555,6 +10281,138 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "US6K4TR:US6K4TR")
+		(at 77.47 110.49 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cdefeac8-1721-4ca9-9d78-12821da610f1")
+		(property "Reference" "Q1"
+			(at 92.71 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "US6K4TR"
+			(at 92.71 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "US6K4TR"
+			(at 104.14 205.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://fscdn.rohm.com/en/products/databook/datasheet/discrete/transistor/mosfet/us6k4.pdf"
+			(at 104.14 305.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mosfet Array 2 N-Channel (Dual) 20V 1.5A 1W Surface Mount TUMT6"
+			(at 77.47 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "0.85"
+			(at 104.14 505.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "755-US6K4TR"
+			(at 104.14 605.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ROHM-Semiconductor/US6K4TR?qs=IJ4m%2FCjbxWe5W6oP8dNQeg%3D%3D"
+			(at 104.14 705.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "ROHM Semiconductor"
+			(at 104.14 805.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "US6K4TR"
+			(at 104.14 905.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "668c5f76-4543-4c96-8010-672324f27944")
+		)
+		(pin "3"
+			(uuid "456b59e4-1ba5-40a3-9873-d0f5475c60e0")
+		)
+		(pin "5"
+			(uuid "3b3280ea-3977-4fb0-b832-622bc91b1205")
+		)
+		(pin "1"
+			(uuid "c651adc2-100f-4109-b6a3-93e8098f40b2")
+		)
+		(pin "6"
+			(uuid "6903b7a6-3d77-4dd8-bbe4-bc417fc0db27")
+		)
+		(pin "4"
+			(uuid "11b3b01a-ecee-40b7-b839-f90dea7f0575")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -10117,6 +10975,75 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "Device:R")
+		(at 121.92 123.19 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fa21e586-b21a-4fbc-bb8a-757303d60ef5")
+		(property "Reference" "R5"
+			(at 118.11 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 119.38 121.285 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 123.698 123.19 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7a70894f-720e-47a6-9d66-d42885ac632f")
+		)
+		(pin "2"
+			(uuid "182b66bf-dfad-4a1c-a39f-4ff6ccec14b8")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(sheet
 		(at 110.49 90.17)
 		(size 12.7 8.89)
@@ -10249,94 +11176,6 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(page "4")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 76.2 107.95)
-		(size 20.32 16.51)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "8b4919a7-1d2e-4328-8834-b08438b11cfd")
-		(property "Sheetname" "Dual-PNP-Small-Signal-Transistor"
-			(at 76.2 107.2384 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Dual-PNP-Small-Signal-Transistor_sch.kicad_sch"
-			(at 76.2 125.0446 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "MainV+" input
-			(at 76.2 113.03 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "988b2eb2-bfbb-4c42-8e71-04d624d14fdf")
-		)
-		(pin "DROUGE V+" input
-			(at 76.2 121.92 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "d08f4e4e-b2ae-4ded-85be-4e3227659219")
-		)
-		(pin "pin IO4" input
-			(at 96.52 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "bae47cf5-b247-466b-bb18-4a4d7b074c9e")
-		)
-		(pin "pin IO5" input
-			(at 96.52 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "51f411ae-80e6-405d-82e5-179aa2700805")
-		)
-		(pin "BAT+" input
-			(at 86.36 107.95 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "bd120473-ecd9-433d-8120-40cfa34247ee")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
-					(page "7")
 				)
 			)
 		)

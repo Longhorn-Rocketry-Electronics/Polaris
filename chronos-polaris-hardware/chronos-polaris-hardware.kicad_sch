@@ -8906,7 +8906,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TerminalBlock_NEW_Wurth:691417320006S"
+		(property "Footprint" "polaris-fp:691417320006S"
 			(at 30.48 64.77 0)
 			(effects
 				(font
@@ -9728,6 +9728,120 @@
 		)
 	)
 	(symbol
+		(lib_id "polaris-sym:TF_PUSH")
+		(at 149.86 156.21 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7c3fa2b2-c13b-4115-b7b1-0eb446a2bedd")
+		(property "Reference" "U5"
+			(at 135.89 154.9399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TF_PUSH"
+			(at 135.89 157.4799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "polaris-fp:TF-SMD_TF-PUSH"
+			(at 149.86 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://item.szlcsc.com/372553.html"
+			(at 152.146 156.337 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 149.86 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C393941"
+			(at 149.86 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "412a0234-95ce-43a2-9002-93cd1533f470")
+		)
+		(pin "5"
+			(uuid "91bbef95-a37d-4eef-a7a4-7ba179693de1")
+		)
+		(pin "10"
+			(uuid "c22fe434-e7b3-414c-be0d-210f2b73224b")
+		)
+		(pin "2"
+			(uuid "ebca282a-c676-43d4-be14-06b24c3e0b4c")
+		)
+		(pin "6"
+			(uuid "eb57c901-9eff-4709-b73b-3e102ba9a923")
+		)
+		(pin "11"
+			(uuid "e1491719-3a47-4c3f-9fa5-de791544a0db")
+		)
+		(pin "7"
+			(uuid "6d948bef-90cb-44c8-adfd-f75b62195f04")
+		)
+		(pin "13"
+			(uuid "2424e71c-f128-4d73-8e10-5ac6777cfb8d")
+		)
+		(pin "1"
+			(uuid "5a4d08cf-ca5a-414b-8854-4aa2cde0f8b5")
+		)
+		(pin "4"
+			(uuid "7d7b4577-98c5-441f-b888-bf7a74496b2d")
+		)
+		(pin "8"
+			(uuid "3745f4b9-b0eb-467a-ab74-606bd05668a6")
+		)
+		(pin "9"
+			(uuid "d623e840-c20a-46fe-a82b-f3688757b652")
+		)
+		(pin "12"
+			(uuid "e413db6b-93ea-4dbd-9c90-42b9a8a7e6ae")
+		)
+		(instances
+			(project ""
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
 		(at 53.34 58.42 90)
@@ -9927,120 +10041,6 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(reference "#PWR09")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "polaris-sym:TF_PUSH")
-		(at 149.86 156.21 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8952acc8-9b4d-4714-9b7c-444e3efe7270")
-		(property "Reference" "U5"
-			(at 135.89 156.845 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TF_PUSH"
-			(at 135.89 154.305 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "polaris-fp:TF-SMD_TF-PUSH"
-			(at 149.86 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://item.szlcsc.com/372553.html"
-			(at 152.146 156.337 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 149.86 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C393941"
-			(at 149.86 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e535f171-aabe-4a33-aead-d40ac212e4ba")
-		)
-		(pin "10"
-			(uuid "6bd2994a-3f9c-48f6-96c5-c47ee5bc7075")
-		)
-		(pin "11"
-			(uuid "45864ddd-51ea-498c-b3a7-b9ba52e78679")
-		)
-		(pin "12"
-			(uuid "e9473a0a-4336-410e-bcab-a34e03fc70d6")
-		)
-		(pin "13"
-			(uuid "ca23d77d-a772-4c5c-8e88-5b52e5bc4979")
-		)
-		(pin "2"
-			(uuid "134b3e30-9be9-4540-aa77-de0f30df0b15")
-		)
-		(pin "3"
-			(uuid "2388302e-877a-428c-a161-6121e3a60944")
-		)
-		(pin "4"
-			(uuid "09347e1e-ebe4-4cd2-9d91-e2bbf75dd84b")
-		)
-		(pin "5"
-			(uuid "031c36f6-7127-4e49-84e7-e7edb0316b1c")
-		)
-		(pin "6"
-			(uuid "fc4cdc24-da5a-4004-9147-6bd8caab056d")
-		)
-		(pin "7"
-			(uuid "0fa78a4e-b730-40ce-9651-1d43c59314f1")
-		)
-		(pin "8"
-			(uuid "184e9e95-96ff-4d5e-8ccb-a3dafbe6bb7b")
-		)
-		(pin "9"
-			(uuid "d2d48ee7-e898-43ca-83ae-b5e2d0cffa5f")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
-					(reference "U5")
 					(unit 1)
 				)
 			)

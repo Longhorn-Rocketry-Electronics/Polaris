@@ -2,5 +2,5 @@
   (version 7)
   (lib (name "polaris-fp")(type "KiCad")(uri "${KIPRJMOD}/JLC2KiCad_lib/polaris-fp")(options "")(descr ""))
   (lib (name "KiCad")(type "KiCad")(uri "${KIPRJMOD}/US6K4TR/KiCad")(options "")(descr ""))
-  (lib (name "TPS629206DRLR")(type "KiCad")(uri "${KIPRJMOD}/TPS629206DRLR")(options "")(descr ""))
+  (lib (name "footprints")(type "KiCad")(uri "${KIPRJMOD}/ul_TPS629206DRLR/KiCADv6/footprints.pretty")(options "")(descr ""))
 )

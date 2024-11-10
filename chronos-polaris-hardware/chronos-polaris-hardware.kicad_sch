@@ -10757,7 +10757,7 @@
 				)
 			)
 		)
-		(property "Footprint" "US6K4TR"
+		(property "Footprint" "KiCad:US6K4TR"
 			(at 104.14 205.41 0)
 			(effects
 				(font

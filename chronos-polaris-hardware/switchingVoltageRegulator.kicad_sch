@@ -2047,7 +2047,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOT5X3-8_DRL_TEX"
+		(property "Footprint" "footprints:SOT5X3-8_DRL_TEX"
 			(at 67.31 138.43 0)
 			(effects
 				(font

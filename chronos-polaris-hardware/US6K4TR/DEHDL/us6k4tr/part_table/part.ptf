@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'US6K4TR'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "ROHM Semiconductor", "US6K4TR" (!) = "", "US6K4TR", "Other", "755-US6K4TR", "https://www.mouser.co.uk/ProductDetail/ROHM-Semiconductor/US6K4TR?qs=IJ4m%2FCjbxWe5W6oP8dNQeg%3D%3D", "Mosfet Array 2 N-Channel (Dual) 20V 1.5A 1W Surface Mount TUMT6", "https://fscdn.rohm.com/en/products/databook/datasheet/discrete/transistor/mosfet/us6k4.pdf", "0.85 mm"
+END_PART
+
+END.

@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "US6K4TR"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "US6K4TR")
+        (spec "default")
+    )
+)

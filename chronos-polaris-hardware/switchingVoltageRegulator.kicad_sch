@@ -1186,102 +1186,6 @@
 				)
 			)
 		)
-		(symbol "power:GND"
-			(power)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "GND"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "GND_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "GND_1_1"
-				(pin power_in line
-					(at 0 0 270)
-					(length 0) hide
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 	)
 	(junction
 		(at 143.51 60.96)
@@ -1909,6 +1813,18 @@
 		)
 		(uuid "fe57ce14-b38e-41d4-b354-87cf4743b090")
 	)
+	(hierarchical_label "VIN"
+		(shape input)
+		(at 144.78 143.51 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3b30114f-1494-441d-8e04-a331fdaa083a")
+	)
 	(hierarchical_label "5V"
 		(shape input)
 		(at 163.83 105.41 0)
@@ -1970,16 +1886,18 @@
 		(uuid "e3985a1e-cc7c-4e50-9a26-d423ea958272")
 	)
 	(symbol
+		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 96.52 85.09 180)
+		(at 111.76 105.41 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "03fd34f0-311b-4336-9d72-7daf20bd319e")
-		(property "Reference" "#PWR04"
-			(at 96.52 78.74 0)
+		(fields_autoplaced yes)
+		(uuid "089f319d-87f5-447c-be97-16709c14c612")
+		(property "Reference" "#PWR012"
+			(at 105.41 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1988,7 +1906,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 95.25 82.55 90)
+			(at 107.95 105.4099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1997,7 +1915,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 85.09 0)
+			(at 111.76 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2006,7 +1924,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 85.09 0)
+			(at 111.76 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2014,73 +1932,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 96.52 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4aebfa80-e3f8-4016-b13f-3220eba4cb72")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
-					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 143.51 107.95 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "040b58fa-0bc6-4925-b989-8815cdadcb30")
-		(property "Reference" "#PWR018"
-			(at 143.51 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 144.78 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 143.51 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 143.51 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 143.51 107.95 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 111.76 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2089,12 +1942,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "294ec5ee-ff9c-46c6-95eb-2edcf19a8f5c")
+			(uuid "0d3d52c1-9cbb-40ea-80f4-6aa37ad19319")
 		)
 		(instances
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
-					(reference "#PWR018")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -2393,6 +2246,73 @@
 		)
 	)
 	(symbol
+		(lib_name "GND_1")
+		(lib_id "power:GND")
+		(at 143.51 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1b7645c9-3cdc-481e-81c9-ac54d2b30547")
+		(property "Reference" "#PWR018"
+			(at 143.51 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 143.51 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 143.51 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f91fe059-4d7f-4517-9e32-f66ea6fe6346")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
+					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 138.43 60.96 90)
 		(unit 1)
@@ -2532,6 +2452,74 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
+		(at 118.11 90.17 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2061c8f1-36f5-4a17-92a3-07b6dafda066")
+		(property "Reference" "#PWR013"
+			(at 111.76 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 114.3 90.1699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 118.11 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 118.11 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 118.11 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a47419eb-a552-43df-8366-3e2b216e5acc")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_1")
+		(lib_id "power:GND")
 		(at 53.34 148.59 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2658,6 +2646,73 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
 					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_1")
+		(lib_id "power:GND")
+		(at 96.52 85.09 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "350bb51a-1a58-4ec9-86d8-eaefbe5b571c")
+		(property "Reference" "#PWR04"
+			(at 96.52 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 96.52 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 96.52 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 96.52 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 96.52 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bd99409e-1b22-4bbc-937d-c37009c02fe4")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -2870,16 +2925,18 @@
 		)
 	)
 	(symbol
+		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 138.43 80.01 180)
+		(at 140.97 80.01 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "49ed4354-785e-491f-ad51-6d04fc9aa013")
-		(property "Reference" "#PWR015"
-			(at 138.43 73.66 0)
+		(fields_autoplaced yes)
+		(uuid "3be8a779-bfb0-424f-9f96-8586ab864625")
+		(property "Reference" "#PWR016"
+			(at 140.97 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2888,16 +2945,15 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 138.43 77.47 90)
+			(at 140.97 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 138.43 80.01 0)
+			(at 140.97 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2906,7 +2962,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 138.43 80.01 0)
+			(at 140.97 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2914,8 +2970,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 138.43 80.01 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 140.97 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2924,12 +2980,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "ed119434-e8d4-429b-b03f-3136efec6f14")
+			(uuid "01e3e08d-77b6-43ae-8cc1-395eb5b297fd")
 		)
 		(instances
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
-					(reference "#PWR015")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -3071,16 +3127,18 @@
 		)
 	)
 	(symbol
+		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 140.97 107.95 0)
+		(at 106.68 97.79 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6991285d-19ea-4672-a7fc-65ded3bce764")
-		(property "Reference" "#PWR017"
-			(at 140.97 114.3 0)
+		(fields_autoplaced yes)
+		(uuid "79b73071-59bc-4419-8671-ecaf2171e691")
+		(property "Reference" "#PWR011"
+			(at 100.33 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3089,15 +3147,16 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 140.97 111.76 0)
+			(at 102.87 97.7899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 140.97 107.95 0)
+			(at 106.68 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3106,7 +3165,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 140.97 107.95 0)
+			(at 106.68 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3114,73 +3173,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 140.97 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "af09f44f-f95c-4ccc-80e9-3756c87c7289")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
-					(reference "#PWR017")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 140.97 80.01 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7795f017-1ea4-45a6-b6df-ade08f44580c")
-		(property "Reference" "#PWR016"
-			(at 140.97 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 140.998 75.3722 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 140.97 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 140.97 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 140.97 80.01 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 106.68 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3189,77 +3183,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "1a392502-5c95-4271-8b86-8ec1cfe0006c")
+			(uuid "3e327cee-2232-4553-89b7-fd9038c73bc3")
 		)
 		(instances
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
-					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 111.76 105.41 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7b94fa99-bc1b-479d-9846-33ffba857a94")
-		(property "Reference" "#PWR012"
-			(at 105.41 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 111.76 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 111.76 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 111.76 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 111.76 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "605b53cb-28e0-46f8-9bc7-6f3657114382")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
-					(reference "#PWR012")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -3336,16 +3265,18 @@
 		)
 	)
 	(symbol
+		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 118.11 90.17 270)
+		(at 124.46 87.63 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "82f5f733-96bb-48a2-b94d-2040f332ed43")
-		(property "Reference" "#PWR013"
-			(at 111.76 90.17 0)
+		(fields_autoplaced yes)
+		(uuid "85fac178-785a-4d78-955b-f37ecc0573ba")
+		(property "Reference" "#PWR014"
+			(at 124.46 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3354,16 +3285,15 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 115.57 88.9 90)
+			(at 124.46 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 118.11 90.17 0)
+			(at 124.46 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3372,7 +3302,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 118.11 90.17 0)
+			(at 124.46 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3380,8 +3310,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 118.11 90.17 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 124.46 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3390,12 +3320,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "0e614c7a-73b9-45ce-817b-f0d467f472b8")
+			(uuid "e29701b6-1ebc-45fb-8833-6054a7f642af")
 		)
 		(instances
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
-					(reference "#PWR013")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -3540,6 +3470,74 @@
 		)
 	)
 	(symbol
+		(lib_name "GND_1")
+		(lib_id "power:GND")
+		(at 49.53 138.43 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ab09090f-2ddc-469e-bd5d-d35f21b69004")
+		(property "Reference" "#PWR024"
+			(at 43.18 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 45.72 138.4299 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 49.53 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "93e9359c-5516-4aef-85fa-4c9a7a06b8bc")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 121.92 90.17 90)
 		(unit 1)
@@ -3674,16 +3672,18 @@
 		)
 	)
 	(symbol
+		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 106.68 97.79 270)
+		(at 152.4 60.96 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "bd81c20e-0a65-46af-98df-831cab3ab80f")
-		(property "Reference" "#PWR011"
-			(at 100.33 97.79 0)
+		(fields_autoplaced yes)
+		(uuid "c6b6db37-5e5c-4c4b-9f5c-6eb02a4299b7")
+		(property "Reference" "#PWR019"
+			(at 158.75 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3692,7 +3692,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 104.14 99.06 90)
+			(at 156.21 60.9599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3701,7 +3701,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 97.79 0)
+			(at 152.4 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3710,7 +3710,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 97.79 0)
+			(at 152.4 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3718,8 +3718,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 106.68 97.79 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 152.4 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3728,12 +3728,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "dabd9b50-4f3a-4ed5-bbf8-ddfcfb97387a")
+			(uuid "f4c5ed01-f999-43b5-841f-5fc67b0e901a")
 		)
 		(instances
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
-					(reference "#PWR011")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -3809,147 +3809,18 @@
 		)
 	)
 	(symbol
+		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 124.46 87.63 180)
+		(at 158.75 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c96e2f11-8709-4917-bccf-e18a223c7a1a")
-		(property "Reference" "#PWR014"
-			(at 124.46 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 123.19 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 124.46 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 124.46 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 124.46 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dddf84e5-bd40-44a1-b0e0-d571baaa4239")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
-					(reference "#PWR014")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 49.53 138.43 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ceaf595d-e942-478c-ae3d-8a97b6c864a0")
-		(property "Reference" "#PWR024"
-			(at 43.18 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 49.53 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 49.53 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 49.53 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 49.53 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5d89092c-fe35-4645-a955-416214b99036")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
-					(reference "#PWR024")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 158.75 113.03 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d2ebd46f-8e5d-4fb4-ad11-63ce33160d7d")
+		(fields_autoplaced yes)
+		(uuid "e9c26254-69bf-435d-858f-4c2a8439557f")
 		(property "Reference" "#PWR020"
-			(at 152.4 113.03 0)
+			(at 158.75 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3958,7 +3829,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 154.94 114.3 90)
+			(at 158.75 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3983,7 +3854,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 158.75 113.03 0)
 			(effects
 				(font
@@ -3993,7 +3864,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "319ec948-3360-4489-92fc-fd37ae484cc9")
+			(uuid "bcbbfa7a-0eda-4504-8ed2-498c3e53bd00")
 		)
 		(instances
 			(project "chronos-polaris-hardware"
@@ -4128,16 +3999,18 @@
 		)
 	)
 	(symbol
+		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 152.4 60.96 90)
+		(at 138.43 80.01 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fa9e9dfb-a08a-4fe0-afb2-3b96127d58cd")
-		(property "Reference" "#PWR019"
-			(at 158.75 60.96 0)
+		(fields_autoplaced yes)
+		(uuid "f6947925-9ab4-4c4f-9c85-53210cde8795")
+		(property "Reference" "#PWR015"
+			(at 138.43 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4146,7 +4019,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 156.21 60.96 0)
+			(at 138.43 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4154,7 +4027,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 152.4 60.96 0)
+			(at 138.43 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4163,7 +4036,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 60.96 0)
+			(at 138.43 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4171,8 +4044,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 152.4 60.96 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 138.43 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4181,12 +4054,79 @@
 			)
 		)
 		(pin "1"
-			(uuid "9eb10afd-9cf3-4a2c-8889-f623011ce75c")
+			(uuid "d48e5784-5bbb-4a07-9411-72742f8a81a1")
 		)
 		(instances
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
-					(reference "#PWR019")
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_1")
+		(lib_id "power:GND")
+		(at 140.97 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe22d889-afce-4e0e-b5e5-db88634f1b88")
+		(property "Reference" "#PWR017"
+			(at 140.97 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 140.97 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 140.97 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 140.97 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bc9b5106-6cb8-4e25-8470-fd1a73f12047")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/85b8a09c-24c3-4ca3-afe0-fa376013540b"
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)

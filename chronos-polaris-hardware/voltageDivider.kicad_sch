@@ -126,11 +126,11 @@
 				)
 			)
 		)
-		(symbol "power:GND"
+		(symbol "GND_1"
 			(power)
+			(pin_numbers hide)
 			(pin_names
-				(offset 0)
-			)
+				(offset 0) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -187,7 +187,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "GND_0_1"
+			(symbol "GND_1_0_1"
 				(polyline
 					(pts
 						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
@@ -201,11 +201,11 @@
 					)
 				)
 			)
-			(symbol "GND_1_1"
+			(symbol "GND_1_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0) hide
-					(name "GND"
+					(length 0)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -375,7 +375,7 @@
 		)
 		(uuid "37cc1d67-a87c-47c6-9dd5-0e948b610b90")
 	)
-	(hierarchical_label "Drogue Detect"
+	(hierarchical_label "DROGUE DETECT"
 		(shape input)
 		(at 118.11 87.63 0)
 		(fields_autoplaced yes)
@@ -399,7 +399,7 @@
 		)
 		(uuid "af9269ad-0009-4e67-b8a2-eac2097672ec")
 	)
-	(hierarchical_label "Main V+"
+	(hierarchical_label "MAIN V+"
 		(shape input)
 		(at 80.01 80.01 180)
 		(fields_autoplaced yes)
@@ -411,7 +411,7 @@
 		)
 		(uuid "afaf8c5d-d618-421a-afde-efcaf0446105")
 	)
-	(hierarchical_label "Main Detect"
+	(hierarchical_label "MAIN DETECT"
 		(shape input)
 		(at 119.38 105.41 0)
 		(fields_autoplaced yes)
@@ -424,6 +424,7 @@
 		(uuid "bc0d9ccd-cdc9-4c6b-918d-6bdc1d340bf8")
 	)
 	(symbol
+		(lib_name "GND_1")
 		(lib_id "power:GND")
 		(at 105.41 95.25 0)
 		(unit 1)
@@ -432,7 +433,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "3e916ac5-d9d1-48ae-84ef-3b310ae2eddb")
+		(uuid "08e1022b-ead6-4b01-b67d-87fd2befb6b3")
 		(property "Reference" "#PWR051"
 			(at 105.41 101.6 0)
 			(effects
@@ -468,7 +469,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 105.41 95.25 0)
 			(effects
 				(font
@@ -478,7 +479,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d9011f84-eeae-4ae5-a010-dd60854ccfb7")
+			(uuid "16894ddc-8632-4d3b-b56f-50136aab6414")
 		)
 		(instances
 			(project "chronos-polaris-hardware"
@@ -553,72 +554,6 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/97b61835-1bd5-4048-92e6-24e014b2d83b"
 					(reference "R21")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 93.98 95.25 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4188126f-6d67-48bc-ab52-1f1639b70af5")
-		(property "Reference" "#PWR050"
-			(at 93.98 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 93.98 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 93.98 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 93.98 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a6ee16c8-558f-4814-b4a2-32d995b9d8a0")
-		)
-		(instances
-			(project "chronos-polaris-hardware"
-				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/97b61835-1bd5-4048-92e6-24e014b2d83b"
-					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -826,6 +761,73 @@
 			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/97b61835-1bd5-4048-92e6-24e014b2d83b"
 					(reference "R29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_1")
+		(lib_id "power:GND")
+		(at 93.98 95.25 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bc7d024f-5e4e-4c85-9eff-b2846e2ee516")
+		(property "Reference" "#PWR050"
+			(at 93.98 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 93.98 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 93.98 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b429623a-67db-4c32-abdd-e468d3691046")
+		)
+		(instances
+			(project "chronos-polaris-hardware"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5/97b61835-1bd5-4048-92e6-24e014b2d83b"
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)

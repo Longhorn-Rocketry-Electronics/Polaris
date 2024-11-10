@@ -1192,12 +1192,13 @@
 				)
 			)
 			(property "Value" "691417320006S"
-				(at -7.49 -3.01 0)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify right bottom)
+					(justify bottom)
+					(hide yes)
 				)
 			)
 			(property "Footprint" "691417320006S:691417320006S"
@@ -1289,16 +1290,6 @@
 				)
 			)
 			(property "IR-UL" "4A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "VALUE" "691417320006S"
 				(at 0 0 0)
 				(effects
 					(font

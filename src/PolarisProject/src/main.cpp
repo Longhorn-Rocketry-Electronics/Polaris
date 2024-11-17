@@ -13,7 +13,7 @@
 #include "circularbuffer.h"
 #include "servo_controller.h"
 #include "Fusion.h"
-#include "wifipoint.cpp"
+#include "wifipoint.h"
 
 SPIClass sensor_spi = SPIClass(SPI2_HOST);
 SPIClass sd_spi = SPIClass(SPI3_HOST);

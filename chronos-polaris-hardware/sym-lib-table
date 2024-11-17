@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "polaris-sym")(type "KiCad")(uri "${KIPRJMOD}/JLC2KiCad_lib/symbol/polaris-sym.kicad_sym")(options "")(descr ""))
   (lib (name "US6K4TR")(type "KiCad")(uri "C:/Users/brand/Documents/LRA/US6K4TR/KiCad/US6K4TR.kicad_sym")(options "")(descr ""))
+  (lib (name "rigelcon")(type "KiCad")(uri "${KIPRJMOD}/KiCADv6/2024-11-17_20-13-21.kicad_sym")(options "")(descr ""))
 )

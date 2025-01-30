@@ -243,7 +243,6 @@ void setup() {
   }
 
   BMPStartMeasurement();
-  beep(1000);
 
   Serial.print("Launch Detection Threshold: ");
   Serial.println(launch_detection_threshold);
@@ -251,6 +250,8 @@ void setup() {
   servoSetup();
 
   FusionAhrsInitialise(&ori);
+
+  beep(1000);
 
 }
 
@@ -320,7 +321,7 @@ String popOldestLogLine() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  // updateAsyncBeep();
+  updateAsyncBeep();
 
   servoLoop(yaw_buf.get(0), pitch_buf.get(0), roll_buf.get(0));
 
@@ -426,25 +427,25 @@ void loop() {
 
     last_motion_update_micros = time_of_read;
 
-    // String s = String(time_of_read) + 
-    //   "," + String(pressure) +
-    //   "," + String(temperature) +
-    //   "," + String(altitude) +
-    //   "," + String(ori.getYaw()) +
-    //   "," + String(ori.getPitch()) +
-    //   "," + String(ori.getRoll()) +
-    //   "," + String(ax) +
-    //   "," + String(ay) +
-    //   "," + String(az) +
-    //   "," + String(gx) +
-    //   "," + String(gy) +
-    //   "," + String(gz) +
-    //   "," + String(drogue_detect) +
-    //   "," + String(main_detect) +
-    //   "," + String(stage) +
-    //   "," + String(main_fired_micros) +
-    //   "," + String(drogue_fired_micros) +
-    //   "\n";
+    String s = String(time_of_read) + 
+      "," + String(pressure) +
+      "," + String(temperature) +
+      "," + String(altitude) +
+      "," + String(yaw_buf.get(0)) +
+      "," + String(pitch_buf.get(0)) +
+      "," + String(roll_buf.get(0)) +
+      "," + String(ax) +
+      "," + String(ay) +
+      "," + String(az) +
+      "," + String(gx) +
+      "," + String(gy) +
+      "," + String(gz) +
+      "," + String(drogue_detect) +
+      "," + String(main_detect) +
+      "," + String(stage) +
+      "," + String(main_fired_micros) +
+      "," + String(drogue_fired_micros) +
+      "\n";
 
     time_buf.push(time_of_read);
     pressure_buf.push(pressure);
@@ -492,17 +493,7 @@ void loop() {
     if (Serial.availableForWrite()) {
       if (num % 10 == 0 || stage == LAUNCHED || stage == POST_APOGEE || true)
       {
-        Serial.println(
-          String("Orientation:") + 
-          String(yaw_buf.get(0)) +
-          "," + String(pitch_buf.get(0)) +
-          "," + String(roll_buf.get(0)) +
-          "," + String(gx) +
-          "," + String(gy) +
-          "," + String(gz)
-          // ", " + time_buf.length() +
-          // ", " + String(lognum)
-        );
+        Serial.println(s);
         Serial.flush();
       }
       if (num == 100) {

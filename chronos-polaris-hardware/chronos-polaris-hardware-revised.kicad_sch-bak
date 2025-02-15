@@ -11107,7 +11107,7 @@
 				)
 			)
 		)
-		(property "Footprint" "polaris-fp:TSW-102-07-G-D_SAI"
+		(property "Footprint" "rigelcon:TSW-102-07-G-D_SAI"
 			(at 49.53 31.75 0)
 			(effects
 				(font
@@ -12318,7 +12318,7 @@
 			(uuid "48ac79c2-3487-46aa-9e02-b25a2adb736a")
 		)
 		(instances
-			(project "chronos-polaris-hardware-revised"
+			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(page "3")
 				)
@@ -12396,7 +12396,7 @@
 			(uuid "f7ed8300-2dde-469a-84cd-f7e2f8fe1346")
 		)
 		(instances
-			(project "chronos-polaris-hardware-revised"
+			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(page "4")
 				)
@@ -12484,7 +12484,7 @@
 			(uuid "c5f3139c-8569-4c81-ad45-bdd5a44a37ed")
 		)
 		(instances
-			(project "chronos-polaris-hardware-revised"
+			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(page "5")
 				)
@@ -12552,7 +12552,7 @@
 			(uuid "0c84c744-bfc8-44ae-9aee-04799a0fbda7")
 		)
 		(instances
-			(project "chronos-polaris-hardware-revised"
+			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(page "6")
 				)
@@ -12650,7 +12650,7 @@
 			(uuid "f917b570-1831-4982-a14a-bcc55b3ca465")
 		)
 		(instances
-			(project "chronos-polaris-hardware-revised"
+			(project "chronos-polaris-hardware"
 				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
 					(page "2")
 				)

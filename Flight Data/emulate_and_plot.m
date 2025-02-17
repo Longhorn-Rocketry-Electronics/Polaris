@@ -7,10 +7,10 @@ clear; clc; close all
 last_second_of_graph = 175;
 
 % Specify the file name (modify this according to your file location)
-%filename = 'Polaris AVTR FTE2 Raw.csv'; %Transonic L2 Rocket
+filename = 'Polaris AVTR FTE2 Raw.csv'; %Transonic L2 Rocket
 %filename = 'Polaris AVTR FTE1 Raw.csv'; %L2 Rocket
-filename = 'TRA_Failed_Polaris.csv'; % TRA's failed flight
-
+%filename = 'TRA_Failed_Polaris.csv'; % TRA's failed flight
+%filename = 'Drone Polaris Test.csv'; % Polaris drone test
 % Read the CSV file into a table
 flightData = readtable(filename);
 

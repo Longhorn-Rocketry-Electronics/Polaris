@@ -1043,6 +1043,16 @@
 		)
 		(uuid "f100636a-0bce-450a-9fe7-e65312a5dc86")
 	)
+	(text "Provides connection from USB (which provides input voltage) to ESP chip, via 2 data lines (IO19 and IO20)"
+		(exclude_from_sim no)
+		(at 163.322 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "1e818e48-bcee-4d5f-af6a-31c4b483e5ec")
+	)
 	(hierarchical_label "IO20"
 		(shape input)
 		(at 166.37 58.42 0)

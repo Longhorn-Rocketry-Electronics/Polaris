@@ -1813,6 +1813,16 @@
 		)
 		(uuid "fe57ce14-b38e-41d4-b354-87cf4743b090")
 	)
+	(text "Converts BAT+ (battery voltage) to regulated outputs (5V and 5V_5%BOOST)"
+		(exclude_from_sim no)
+		(at 141.224 123.444 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "099e5d73-ba42-4a83-ad2f-2263a4c790bd")
+	)
 	(hierarchical_label "VIN"
 		(shape input)
 		(at 144.78 143.51 0)
@@ -2057,7 +2067,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "TPS629206DRLR"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps629206.pdf?ts=1740282913128&ref_url=https%253A%252F%252Fwww.mouser.com%252F"
 			(at 67.31 138.43 0)
 			(effects
 				(font

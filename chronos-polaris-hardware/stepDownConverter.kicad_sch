@@ -1218,6 +1218,16 @@
 		)
 		(uuid "fe31a294-d6a9-46ee-bc81-6cc0a0ed5bb1")
 	)
+	(text "reduces VIN (input voltage) to a lower, regulated output (5V)"
+		(exclude_from_sim no)
+		(at 139.954 111.506 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "dedf1894-30c4-4122-a6ca-46c810fe0508")
+	)
 	(hierarchical_label "VIN"
 		(shape input)
 		(at 96.52 64.77 180)

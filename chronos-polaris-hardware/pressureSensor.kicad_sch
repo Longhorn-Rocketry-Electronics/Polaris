@@ -515,6 +515,24 @@
 		)
 		(uuid "fef7745c-aaf4-486d-ba69-b0807d240c7d")
 	)
+	(text_box " Measures applied pressure and communicates via SPI, with 3.3V and GND as power inputs, SDI (input) for data from the MCU, SDO (output) for pressure data to the MCU, SCK (input) for clock, and CSB (input) to select the sensor for communication."
+		(exclude_from_sim no)
+		(at 38.1 107.95 0)
+		(size 141.1463 11.43)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "77043182-37bd-4ea5-b6ad-c021d40992d1")
+	)
 	(hierarchical_label "GND"
 		(shape input)
 		(at 81.28 92.71 270)

@@ -363,6 +363,17 @@
 		)
 		(uuid "ea604b89-6cf1-469d-9145-d93a415a268f")
 	)
+	(text "Depending on voltage detected from ESP chip (DROGUE DETECT AND MAIN DETECT), pulls up Main and Drogue Voltages"
+		(exclude_from_sim no)
+		(at 105.41 114.046 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8ee4cff4-5201-482f-84d3-6fa1244033c9")
+	)
 	(hierarchical_label "3.3V"
 		(shape input)
 		(at 93.98 69.85 90)

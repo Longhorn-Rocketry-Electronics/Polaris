@@ -2067,7 +2067,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps629206.pdf?ts=1740282913128&ref_url=https%253A%252F%252Fwww.mouser.com%252F"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps629206.pdf?ts=1740282913128"
 			(at 67.31 138.43 0)
 			(effects
 				(font
@@ -3920,7 +3920,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://item.szlcsc.com/58158.html"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps54318.pdf?ts=1740750848777"
 			(at 141.986 94.107 0)
 			(effects
 				(font

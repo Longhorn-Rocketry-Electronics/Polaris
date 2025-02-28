@@ -689,7 +689,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://cn.bing.com/search?q=datasheet%3A+%20AMP6127"
+		(property "Datasheet" "http://www.yxsens.com/en/h-pd-51.html"
 			(at 105.664 79.883 0)
 			(effects
 				(font

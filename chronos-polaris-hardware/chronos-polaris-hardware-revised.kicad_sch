@@ -4625,6 +4625,10 @@
 		(uuid "2174a6d1-6653-42db-b5ff-6c64b360bb86")
 	)
 	(no_connect
+		(at 213.36 100.33)
+		(uuid "38fb4d01-2e11-4a2c-bbf0-179ee399b160")
+	)
+	(no_connect
 		(at 139.7 171.45)
 		(uuid "511a2ab4-a69b-46f3-99f1-34693b482c68")
 	)
@@ -4639,6 +4643,10 @@
 	(no_connect
 		(at 144.78 171.45)
 		(uuid "a102db56-da83-4425-93a3-f7bade08b863")
+	)
+	(no_connect
+		(at 213.36 102.87)
+		(uuid "a517756a-4078-46bd-8906-0be441383e65")
 	)
 	(no_connect
 		(at 213.36 105.41)
@@ -5173,6 +5181,16 @@
 			(type default)
 		)
 		(uuid "359c8a50-e9aa-42dd-9b82-1d7262e0e065")
+	)
+	(wire
+		(pts
+			(xy 90.17 35.56) (xy 90.17 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37703f32-9511-4594-8f82-becb57f5c542")
 	)
 	(wire
 		(pts
@@ -6146,6 +6164,16 @@
 	)
 	(wire
 		(pts
+			(xy 90.17 31.75) (xy 91.44 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a45fad72-ff41-49aa-be21-d012d963fbb4")
+	)
+	(wire
+		(pts
 			(xy 161.29 87.63) (xy 161.29 110.49)
 		)
 		(stroke
@@ -6293,6 +6321,16 @@
 			(type default)
 		)
 		(uuid "b278cb20-8f31-4c44-94be-94150ae5bcd5")
+	)
+	(wire
+		(pts
+			(xy 92.71 35.56) (xy 90.17 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b27bdaa9-3b9a-472d-8038-282f6d86767a")
 	)
 	(wire
 		(pts
@@ -7003,28 +7041,6 @@
 		)
 		(uuid "fd5b2885-6c6f-45da-a5cf-53d43f826779")
 	)
-	(global_label "Rigel3"
-		(shape output)
-		(at 213.36 102.87 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "017d8cf6-dbee-4454-8a0b-8630cf0e5a10")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 222.3323 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "3.3V"
 		(shape input)
 		(at 262.89 90.17 0)
@@ -7038,28 +7054,6 @@
 		(uuid "04932b56-f36f-4025-9853-38d9610f88b7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 269.9082 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Rigel4"
-		(shape input)
-		(at 90.17 31.75 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "06aa4a36-96a6-4d1c-891c-17007f1232f1")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 99.1423 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7619,28 +7613,6 @@
 			)
 		)
 	)
-	(global_label "Rigel3"
-		(shape input)
-		(at 90.17 34.29 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c01b46bc-dd99-484e-bc68-893fe961d6fe")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 99.1423 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "Rigel1"
 		(shape output)
 		(at 190.5 118.11 180)
@@ -7729,9 +7701,9 @@
 			)
 		)
 	)
-	(global_label "Rigel4"
-		(shape output)
-		(at 213.36 100.33 0)
+	(global_label "3.3V"
+		(shape input)
+		(at 92.71 35.56 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7739,9 +7711,9 @@
 			)
 			(justify left)
 		)
-		(uuid "e790d39d-5ec8-4a85-9823-2b1abaa74208")
+		(uuid "e3ce2c69-8c49-49c3-85b9-3f7bb4bd8daa")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 222.3323 100.33 0)
+			(at 99.8076 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10236,6 +10208,74 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
+		(at 91.44 31.75 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "81ecd09f-2b41-4d08-8ab4-f905ad451b57")
+		(property "Reference" "#PWR057"
+			(at 97.79 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 95.25 31.7499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 91.44 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "abcb23d3-5f78-4bb8-9d4b-00049514fdcf")
+		)
+		(instances
+			(project "chronos-polaris-hardware-revised"
+				(path "/503f01d5-a0c6-4ade-b485-97c3c2e1d6c5"
+					(reference "#PWR057")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_1")
+		(lib_id "power:GND")
 		(at 236.22 140.97 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12551,7 +12591,7 @@
 			)
 			(uuid "86d222ea-6266-41ef-bbbe-f28c0a9f0ff8")
 		)
-		(pin "SDO" output
+		(pin "SDO" bidirectional
 			(at 242.57 73.66 180)
 			(effects
 				(font
@@ -12581,7 +12621,7 @@
 			)
 			(uuid "68b9f2fc-28cb-4735-add3-3e22038eb54f")
 		)
-		(pin "SDI" input
+		(pin "SDI" bidirectional
 			(at 260.35 67.31 0)
 			(effects
 				(font

@@ -387,7 +387,7 @@
 		(uuid "37cc1d67-a87c-47c6-9dd5-0e948b610b90")
 	)
 	(hierarchical_label "DROGUE DETECT"
-		(shape input)
+		(shape output)
 		(at 118.11 87.63 0)
 		(fields_autoplaced yes)
 		(effects
@@ -423,7 +423,7 @@
 		(uuid "afaf8c5d-d618-421a-afde-efcaf0446105")
 	)
 	(hierarchical_label "MAIN DETECT"
-		(shape input)
+		(shape output)
 		(at 119.38 105.41 0)
 		(fields_autoplaced yes)
 		(effects

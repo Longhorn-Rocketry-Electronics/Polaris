@@ -558,7 +558,7 @@
 		(uuid "31cfc3fd-6b8e-4dff-b341-f5f9f18d9fc6")
 	)
 	(hierarchical_label "SDI"
-		(shape input)
+		(shape bidirectional)
 		(at 128.27 82.55 0)
 		(fields_autoplaced yes)
 		(effects
@@ -594,7 +594,7 @@
 		(uuid "906dbb0a-074f-4777-ab7a-ac6a6c222ad7")
 	)
 	(hierarchical_label "SDO"
-		(shape input)
+		(shape bidirectional)
 		(at 88.9 100.33 270)
 		(fields_autoplaced yes)
 		(effects

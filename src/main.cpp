@@ -14,6 +14,10 @@
 #include "servo_controller.h"
 #include "Fusion.h"
 
+
+#define UART_TX 17
+#define UART_RX 16
+
 SPIClass sensor_spi = SPIClass(SPI2_HOST);
 SPIClass sd_spi = SPIClass(SPI3_HOST);
 
@@ -42,14 +46,21 @@ bool drogue_on_apogee = true;
 
 FusionAhrs ori;
 
+HardwareSerial rigelCom(2);
+
 void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable   detector
 
   Serial.begin(115200);
   // put your setup code here, to run once:
-  pinMode(42,OUTPUT);
-  pinMode(43,OUTPUT);
-  pinMode(44,OUTPUT);
+  pinMode(42, OUTPUT);
+  pinMode(43, OUTPUT);
+  pinMode(44, OUTPUT);
+
+  rigelCom.begin(UART_BAUD, SERIAL_8N1, UART_RX, UART_TX);
+  pinMode(UART_TX, OUTPUT);
+  pinMode(UART_RX, INPUT);
+  Serial.println("UART with Rigel started at 9600 baud rate");
 
   pinMode(BUZZER_PIN, OUTPUT);
 
@@ -73,16 +84,16 @@ void setup() {
 
   pinMode(V5_ENABLE, OUTPUT);
   pinMode(V5_BOOST, OUTPUT);
-  
+
   digitalWrite(V5_ENABLE, HIGH);
   digitalWrite(V5_BOOST, LOW);
-  
+
   sensor_spi.begin(
     SENSOR_CLK,
     SENSOR_MISO,
-    SENSOR_MOSI                                                  
+    SENSOR_MOSI
   );
-  
+
   sensor_spi.beginTransaction(
     SPISettings(
       100000,
@@ -94,7 +105,7 @@ void setup() {
   beep(250);
   delay(1500);
 
-  bmp_init(&sensor_spi);  
+  bmp_init(&sensor_spi);
   delay(100);
 
   while (!bmi088.isConnection()) {
@@ -104,7 +115,7 @@ void setup() {
   }
 
   bmi088.initialize();
- 
+
   Serial.println("Going to SD init");
   sd_spi.begin(
     SD_CLK,
@@ -122,7 +133,7 @@ void setup() {
       "/sd",
       15
     ) && tries < 3
-  ) {
+    ) {
     Serial.println("Waiting for SD to be alive!");
     tries++;
     beep(50);
@@ -160,7 +171,8 @@ void setup() {
 
             if (launch_detection_threshold < 30.48) {
               launch_detection_threshold = 30.48;
-            } else if (launch_detection_threshold > 152.4) { // 500 feet
+            }
+            else if (launch_detection_threshold > 152.4) { // 500 feet
               launch_detection_threshold = 152.4;
             }
           }
@@ -192,7 +204,8 @@ void setup() {
           if (line.startsWith("drogue_on_apogee")) {
             drogue_on_apogee = line.substring(17)[0] == 't' || line.substring(17)[0] == 'T' || line.substring(17)[0] == '1';
           }
-        } catch (const std::exception& e) {
+        }
+        catch (const std::exception& e) {
           Serial.println("Error parsing config file!");
           Serial.println(e.what());
           beep(50);
@@ -208,13 +221,14 @@ void setup() {
       f.close();
       beep(500);
       delay(100);
-    } else {
+    }
+    else {
       Serial.println("File open failed!");
       beep(50);
       delay(100);
     }
 
-    
+
 
     File w = SD.open("/log.csv", FILE_APPEND, true);
 
@@ -222,7 +236,8 @@ void setup() {
       Serial.println("File opened!");
       w.println("START");
       w.close();
-    } else {
+    }
+    else {
       Serial.println(w.getWriteError());
       Serial.println("File open failed!");
     }
@@ -237,7 +252,8 @@ void setup() {
     log_file_name = "/log-" + String(log_file_count) + ".csv";
 
     log_file_file.print("Time (micros), Pressure (Pa), Temperature (C), Altitude (m), Yaw (deg), Pitch (deg), Roll (deg), Ax (m/s^2), Ay (m/s^2), Az (m/s^2), Gx (deg/s), Gy (deg/s), Gz (deg/s), Drogue Detect (mV), Main Detect (mV), Stage, Main Fired (micros), Drogue Fired (micros)\n");
-  } else {
+  }
+  else {
     Serial.println("SD init failed!");
     log_file = NULL;
   }
@@ -286,7 +302,7 @@ String popOldestLogLine() {
 
   float alt_val = altitude_buf.pop();
 
-  String toRet = String(time_buf.pop()) + 
+  String toRet = String(time_buf.pop()) +
     "," + String(pressure_buf.pop()) +
     "," + String(temperature_buf.pop()) +
     "," + String(stage == NOT_LAUNCHED ? 0 : alt_val) + // if we are not launched, altitude is 0
@@ -311,11 +327,26 @@ String popOldestLogLine() {
   // if (Serial.availableForWrite()) {
   //   Serial.print("POPPED, LOGGING: " + toRet);
   // }
-  
+
   return toRet;
 }
 
+void sendCSVToRigel() {
+  File csv = SD.open(log_file_name, FILE_READ);
 
+  Serial.println("Sending CSV to Rigel...");
+  rigelCom.println("BEGIN_CSV");
+
+  while (csv.available()) {
+    String line = csv.readStringUntil('\n');
+    rigelCom.println(line);  // Send each line over UART
+    delay(5);  // small delay to avoid buffer overflow
+  }
+
+  rigelCom.println("END_CSV");
+  csv.close();
+  Serial.println("CSV sent to Rigel.");
+}
 
 
 void loop() {
@@ -332,7 +363,7 @@ void loop() {
 
   if (esp_timer_get_time() - last_continuity_check_micros >= 5000 * 1000) { // Check continuity every 5 seconds
 
-    main_detect = (uint16_t)analogReadMilliVolts(A5);
+    main_detect = (uint16_e)analogReadMilliVolts(A5);
     drogue_detect = (uint16_t)analogReadMilliVolts(A6);
 
     if (stage == NOT_LAUNCHED) {
@@ -348,21 +379,19 @@ void loop() {
 
     if (main_detect >= 500 && drogue_detect >= 500) {
       switch (stage) {
-        case NOT_LAUNCHED:
-          queue_beep(esp_timer_get_time(), 250 * 1000); // 250ms
-          break;
-        case LAUNCHED:
-        case POST_APOGEE:
-          break;
-        case LANDED:
-          queue_beep(esp_timer_get_time(), 1000 * 1000); // 1000ms
+      case NOT_LAUNCHED:
+        queue_beep(esp_timer_get_time(), 250 * 1000); // 250ms
+        break;
+      case LAUNCHED:
+      case POST_APOGEE:
+        break;
+      case LANDED:
+        queue_beep(esp_timer_get_time(), 1000 * 1000); // 1000ms
       }
     }
 
     last_continuity_check_micros = esp_timer_get_time();
   }
-
-
 
   if (esp_timer_get_time() - last_pressure_update_micros >= 50 * 1000) { // 20Hz
     digitalWrite(42, output);
@@ -372,6 +401,8 @@ void loop() {
     if (last_pressure_update_micros == 0) {
       last_pressure_update_micros = esp_timer_get_time();
     }
+
+    sendCSVToRigel();
 
     getBMPData(&temperature, &pressure);
     altitude = altitude_from_pressure(pressure) - launch_ground_altitude;
@@ -417,8 +448,8 @@ void loop() {
 
     // ori.updateIMU(gx, gy, gz, ax, ay, az, (time_of_read - last_motion_update_micros) / 1000000.0f);
 
-    const FusionVector gyroscope = {gx, gy, gz}; 
-    const FusionVector accelerometer = {ax, ay, az};
+    const FusionVector gyroscope = { gx, gy, gz };
+    const FusionVector accelerometer = { ax, ay, az };
 
     FusionAhrsUpdateNoMagnetometer(&ori, gyroscope, accelerometer, (time_of_read - last_motion_update_micros) / 1000000.0f);
 
@@ -470,14 +501,14 @@ void loop() {
         if (lognum >= 100) { // 1Hz
           output = !output;
           log_file->print(popOldestLogLine());
-          log_file->flush();          
+          log_file->flush();
           lognum = 0;
           // Serial.println("POPPED, LOGGING w/ " + String(esp_get_free_heap_size()) + " bytes free");
           // Serial.flush();
         }
         lognum++;
-      } else if (stage == LAUNCHED || stage == POST_APOGEE)
-      {        // 100Hz
+      }
+      else if (stage == LAUNCHED || stage == POST_APOGEE) {        // 100Hz
         int counter = 3;
         while (counter > 0 && logLineAvailable()) {
           log_file->print(popOldestLogLine());
@@ -490,10 +521,9 @@ void loop() {
     }
 
     if (Serial.availableForWrite()) {
-      if (num % 10 == 0 || stage == LAUNCHED || stage == POST_APOGEE || true)
-      {
+      if (num % 10 == 0 || stage == LAUNCHED || stage == POST_APOGEE || true) {
         Serial.println(
-          String("Orientation:") + 
+          String("Orientation:") +
           String(yaw_buf.get(0)) +
           "," + String(pitch_buf.get(0)) +
           "," + String(roll_buf.get(0)) +
@@ -514,7 +544,7 @@ void loop() {
       num++;
     }
 
-  }    
+  }
 
   if (recent_altitudes.full()) {
     float newest_alt, recent_alt, mid_alt, oldest_alt;
@@ -522,86 +552,80 @@ void loop() {
     recent_alt = recent_altitudes.get(10);
     mid_alt = recent_altitudes.get(50);
     oldest_alt = recent_altitudes.get(99);
-    switch(stage)
+    switch (stage) {
+    case NOT_LAUNCHED:
     {
-      case NOT_LAUNCHED:
-      {
-        if (newest_alt > recent_alt && // This avoids a one or two element spike
-            (recent_alt > oldest_alt + launch_detection_threshold ) &&
-            
-            ((abs(ax) >= launch_detection_min_g*1000 || abs(ay) >= launch_detection_min_g*1000 || abs(az) >= launch_detection_min_g*1000) || (ax == 0 && ay == 0 && az == 0))
-            
-             )
-        {
-          if (Serial.availableForWrite()) {
-            Serial.println("NEWEST, RECENT, MID, OLDEST");
-            Serial.println(newest_alt);
-            Serial.println(recent_alt);
-            Serial.println(mid_alt);
-            Serial.println(oldest_alt);
-          }
-          stage = LAUNCHED;
+      if (newest_alt > recent_alt && // This avoids a one or two element spike
+        (recent_alt > oldest_alt + launch_detection_threshold) &&
 
-          launch_ground_altitude = oldest_alt;       
+        ((abs(ax) >= launch_detection_min_g * 1000 || abs(ay) >= launch_detection_min_g * 1000 || abs(az) >= launch_detection_min_g * 1000) || (ax == 0 && ay == 0 && az == 0))
 
-          // find the most recent altitude that is within 3 meters of the launch ground altitude to use as the launch time
-          int launch_time_index = altitude_buf.length() - 1;
-
-          while (launch_time_index > 0 && abs(altitude_buf.get(launch_time_index) - launch_ground_altitude) > 3) {
-            launch_time_index--;
-          }
-
-          launch_time_micros = time_buf.get(launch_time_index);
-
-          // shift all the previous altitudes down by the launch ground altitude, since all future measurements will be relative to the launch ground altitude
-          for (int i = 0; i < altitude_buf.length(); i++) {
-            altitude_buf.setRaw(i, altitude_buf.getRaw(i) - launch_ground_altitude);
-          }
-          for (int i = 0; i < recent_altitudes.length(); i++) {
-            recent_altitudes.setRaw(i, recent_altitudes.getRaw(i) - launch_ground_altitude);
-          }
-
-          altitude = altitude - launch_ground_altitude;
-
-        }        
-        break;
-      }
-      case LAUNCHED:
-      {
-        if (newest_alt < mid_alt && mid_alt < oldest_alt)
-        {
-          stage = POST_APOGEE;
-          if (Serial.availableForWrite()) {
-            Serial.println("POST_APOGEE -----------------------");
-          }
+        ) {
+        if (Serial.availableForWrite()) {
+          Serial.println("NEWEST, RECENT, MID, OLDEST");
+          Serial.println(newest_alt);
+          Serial.println(recent_alt);
+          Serial.println(mid_alt);
+          Serial.println(oldest_alt);
         }
-        break;
-      }
-      case POST_APOGEE:
-      {
-        float maxDifference = 0;
-        for (int i =0; i < recent_altitudes.length(); i++)
-        {
-          float difference = abs(recent_altitudes.get(i) - recent_altitudes.get(i+1));
-          if (difference > maxDifference)
-          {
-            maxDifference = difference;
-          }
+        stage = LAUNCHED;
+
+        launch_ground_altitude = oldest_alt;
+
+        // find the most recent altitude that is within 3 meters of the launch ground altitude to use as the launch time
+        int launch_time_index = altitude_buf.length() - 1;
+
+        while (launch_time_index > 0 && abs(altitude_buf.get(launch_time_index) - launch_ground_altitude) > 3) {
+          launch_time_index--;
         }
-        if (maxDifference < 3)
-        {
-          stage = LANDED;
-          if (Serial.availableForWrite()) {
-            Serial.println("LANDED ----------------------- " + String(maxDifference));
-          }
-          while (logLineAvailable()) {
-            log_file->print(popOldestLogLine());
-            log_file->flush();
-          }
+
+        launch_time_micros = time_buf.get(launch_time_index);
+
+        // shift all the previous altitudes down by the launch ground altitude, since all future measurements will be relative to the launch ground altitude
+        for (int i = 0; i < altitude_buf.length(); i++) {
+          altitude_buf.setRaw(i, altitude_buf.getRaw(i) - launch_ground_altitude);
+        }
+        for (int i = 0; i < recent_altitudes.length(); i++) {
+          recent_altitudes.setRaw(i, recent_altitudes.getRaw(i) - launch_ground_altitude);
+        }
+
+        altitude = altitude - launch_ground_altitude;
+
+      }
+      break;
+    }
+    case LAUNCHED:
+    {
+      if (newest_alt < mid_alt && mid_alt < oldest_alt) {
+        stage = POST_APOGEE;
+        if (Serial.availableForWrite()) {
+          Serial.println("POST_APOGEE -----------------------");
         }
       }
-      case LANDED:
-        break;
+      break;
+    }
+    case POST_APOGEE:
+    {
+      float maxDifference = 0;
+      for (int i = 0; i < recent_altitudes.length(); i++) {
+        float difference = abs(recent_altitudes.get(i) - recent_altitudes.get(i + 1));
+        if (difference > maxDifference) {
+          maxDifference = difference;
+        }
+      }
+      if (maxDifference < 3) {
+        stage = LANDED;
+        if (Serial.availableForWrite()) {
+          Serial.println("LANDED ----------------------- " + String(maxDifference));
+        }
+        while (logLineAvailable()) {
+          log_file->print(popOldestLogLine());
+          log_file->flush();
+        }
+      }
+    }
+    case LANDED:
+      break;
     }
 
   }
@@ -642,8 +666,9 @@ void loop() {
       if (drogue_on_apogee && stage == POST_APOGEE) {
         digitalWrite(DROGUE_CTRL, HIGH);
         drogue_fired_micros = current_time;
-      } else {
-        // Serial.println("Not firing drogue because: " + String(drogue_on_apogee) + ", " + String(stage));
+      }
+      else {
+     // Serial.println("Not firing drogue because: " + String(drogue_on_apogee) + ", " + String(stage));
       }
       if (median_altitude < drogue_altitude_meters && drogue_altitude_meters > 0 && stage == POST_APOGEE) {
         digitalWrite(DROGUE_CTRL, HIGH);

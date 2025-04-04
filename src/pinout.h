@@ -1,5 +1,7 @@
 #include "driver/adc.h"
 
+#define GPS_BAUD 9600;
+
 #define BUZZER_PIN 3
 #define MAIN_CTRL 4
 #define DROGUE_CTRL 5
@@ -11,6 +13,9 @@
 #define SENSOR_CLK 45
 #define SENSOR_MISO 13
 #define SENSOR_MOSI 14
+
+#define UART_TX 19
+#define UART_RX 22
 
 #define SD_CLK 10 // "CLX"
 #define SD_MISO 9 // "DAT0"

@@ -1,0 +1,9 @@
+Manufacturer=ROHM Semiconductor
+PartNumber=US6K4TR
+PartCategory=MOSFET (N-Channel)
+PackageCategory=Other
+PinCount=6
+Version=5.3
+Released=2018-03-02 21:58:56
+Downloaded=2024-10-27 21:06:39
+3D=Y

@@ -1,0 +1,132 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "US6K4TR"
+   (description "Mosfet Array 2 N-Channel (Dual) 20V 1.5A 1W Surface Mount TUMT6")
+   (family "TRX")
+   (package "US6K4TR")
+   (attribute "Datasheet Link" "https://fscdn.rohm.com/en/products/databook/datasheet/discrete/transistor/mosfet/us6k4.pdf")
+   (attribute "Geometry.Height" "0.85mm")
+   (attribute "Mouser Part Number" "755-US6K4TR")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ROHM-Semiconductor/US6K4TR?qs=IJ4m%2FCjbxWe5W6oP8dNQeg%3D%3D")
+   (attribute "Manufacturer_Name" "ROHM Semiconductor")
+   (attribute "Manufacturer_Part_Number" "US6K4TR")
+   (gate
+    (symbol "US6K4TR")
+    (pin "TR1_S" 1 PS)
+    (pin "TR1_G" 2 PS)
+    (pin "TR2_D" 3 PS)
+    (pin "TR2_S" 4 PS)
+    (pin "TR2_G" 5 PS)
+    (pin "TR1_D" 6 PS)
+   )
+  )
+  (symbol "US6K4TR"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 1000 100) (pt 1000 -300) (pt 200 -300) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1200 -200) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1200 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1200 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "US6K4TR"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -1 0.85)
+      (pt 1 0.85)
+      (pt 1 -0.85)
+      (pt -1 -0.85)
+      (pt -1 0.85))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2 2.25)
+      (pt 2 2.25)
+      (pt 2 -2.25)
+      (pt -2 -2.25)
+      (pt -2 2.25))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -1 0.4)
+      (pt -1 -0.4))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt 1 0.4)
+      (pt 1 -0.4))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -0.65 -1.6)
+      (arc (pt -0.650 -1.600) (pt -0.700 -1.700) (pt -0.600 -1.600) (start 180.0) (sweep 90.0))
+      (pt -0.65 -1.7)
+      (arc (pt -0.650 -1.700) (pt -0.700 -1.700) (pt -0.600 -1.600) (start 180.0) (sweep -90.0))
+      (pt -0.65 -1.6))))
+   (leg 1 (pt -0.650 -0.950) (padstack 0))
+   (leg 2 (pt 0.000 -0.950) (padstack 0))
+   (leg 3 (pt 0.650 -0.950) (padstack 0))
+   (leg 4 (pt 0.650 0.950) (padstack 0))
+   (leg 5 (pt 0.000 0.950) (padstack 0))
+   (leg 6 (pt -0.650 0.950) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 0.450 0.600 0 0 90.000))
+   )
+   (model "US6K4TR.stp"
+    (euler 90 0 90)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

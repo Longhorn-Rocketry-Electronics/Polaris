@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "US6K4TR"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2022-09-16-05:29:51)
+    (mountForm default
+        (footprintRef "US6K4TR")
+        (spec "System")
+    )
+)

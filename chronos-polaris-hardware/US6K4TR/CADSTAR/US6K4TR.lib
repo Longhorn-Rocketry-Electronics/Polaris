@@ -1,0 +1,16 @@
+.US6K4TR :1 ;Mosfet Array 2 N-Channel (Dual) 20V 1.5A 1W Surface Mount TUMT6
+US6K4TR
+*STM Q
+*NGS
+*PLB 1="TR1 S" 2="TR1 G" 3="TR2 D" 4="TR2 S" 5="TR2 G" 6="TR1 D"
+*MXP 6
+*DFN US6K4TR
+~!Mouser Part Number (755-US6K4TR)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/ROHM-Semiconductor/US6K4TR?qs=IJ4m%2FCjbxWe5W6oP8dNQeg%3D%3D)
+~!Manufacturer_Name (ROHM Semiconductor)
+~!Manufacturer_Part_Number (US6K4TR)
+~!Link Datasheet (https://fscdn.rohm.com/en/products/databook/datasheet/discrete/transistor/mosfet/us6k4.pdf)
+~!Height (0.85mm)
+~!3D_Model (US6K4TR)
+US6K4TR
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 
